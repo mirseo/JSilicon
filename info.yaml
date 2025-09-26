@@ -1,6 +1,6 @@
 # Tiny Tapeout project information (Wokwi project)
 project:
-  wokwi_id:     443164117966997505       # Set this to the ID of your Wokwi project (the number from the project's URL)
+  wokwi_id:     305568836183130690       # Set this to the ID of your Wokwi project (the number from the project's URL)
   title:        "Jsilicon"      # Project title
   author:       "JunHyeok seo/mirseo"      # Your name
   discord:      "mirseo"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
