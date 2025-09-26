@@ -1,14 +1,14 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/wokwi_test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
-# Tiny Tapeout Wokwi Project Template
+# Jsilicon
 
 - [Read the documentation for project](docs/info.md)
 
-## What is Tiny Tapeout?
+## What is Jsilicon?
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
+Jsilicon is a project aimed at creating a dedicated ASIC chip for JavaScript execution, with the objective of processing JavaScript operations without requiring a conventional CPU architecture.  
 
-To learn more and get started, visit https://tinytapeout.com.
+<!-- To learn more and get started, visit https://JSilicon.mirseo.dev. -->
 
 ## Wokwi Projects
 
