@@ -9,7 +9,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+이 프로젝트는 JSilicon이라고 불리는 프로젝트로, JS 코드 중 일부를 제작하는 프로젝트를 제작합니다.  
 
 ## How to test
 
