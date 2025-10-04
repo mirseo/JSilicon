@@ -7,7 +7,7 @@ module ALU(
     input wire [7:0] b,
     input wire [2:0] opcode,
 
-    output reg [15:0] result,
+    output reg [15:0] result
     );
 
     // opcode
@@ -34,11 +34,11 @@ module ALU(
             3'b010: result = multiply_temp; 
             3'b011: result = div_by_zero ? 16'b0000 : {{8{1'b0}}, a / b};
             3'b100: result = div_by_zero ? 16'b0000 : {{8{1'b0}}, a % b}; 
-            3'b101: result = (a == b) ? 16'h0001 : 16h'0000;
-            3'b110: result = (a > b) ? 16'h0001 : 16h'0000;
-            3'b111: result = (a < b) ? 16'h0001 : 16h'0000;
+            3'b101: result = (a == b) ? 16'h0001 : 16'h0000;
+            3'b110: result = (a > b) ? 16'h0001 : 16'h0000;
+            3'b111: result = (a < b) ? 16'h0001 : 16'h0000;
             // 비정의 코드 반환
-            default: result = 16'XXXX;
+            default: result = 16'0000;
         endcase
     end
 endmodule
