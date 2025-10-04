@@ -33,8 +33,8 @@ module Multiply_cell (
     input wire [7:0] a,
     input wire [7:0] b,
 
-    output wire [7:0] minus
+    output wire [7:0] multiply
     );
 
-    assign minus = a * b
+    assign multiply = a * b
 endmodule
