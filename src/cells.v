@@ -1,150 +1,90 @@
-/*
-This file provides the mapping from the Wokwi modules to Verilog HDL.
-
-It's only needed for Wokwi designs.
-*/
-
 `define default_netname none
 
+// 덧셈 모듈
+// 지시자 추가 : 계층 변경 금지
 (* keep_hierarchy *)
-module buffer_cell (
-    input wire in,
-    output wire out
+module Sum_cell (
+    // 1비트 > 8비트로 업그레이드
+    input wire [7:0] a,
+    input wire [7:0] b,
+
+    output wire [7:0] sum
     );
-    assign out = in;
+
+    // 결과 더해서 출력
+    assign sum = a + b;
 endmodule
 
+// 뺄셈 연산 모듈
 (* keep_hierarchy *)
-module and_cell (
-    input wire a,
-    input wire b,
-    output wire out
+module Minus_cell (
+    input wire [7:0] a,
+    input wire [7:0] b,
+
+    output wire [7:0] minus
     );
 
-    assign out = a & b;
+    assign minus = a - b;
 endmodule
 
+// 곱셈 연산 모듈
 (* keep_hierarchy *)
-module or_cell (
-    input wire a,
-    input wire b,
-    output wire out
+module Multiply_cell (
+    input wire [7:0] a,
+    input wire [7:0] b,
+
+    // 8비트 곱셈의 최대 출력은 16진수 255 => 결과값에 16진수 사용
+    output wire [15:0] multiply
     );
 
-    assign out = a | b;
+    wire multiply_by_zero;
+    assign multiply_by_zero = (b == 8'h00);
+
+    assign multiply = multiply_by_zero ? 16'h00 : (a * b);
 endmodule
 
+// 나눗셈 연산 모듈
 (* keep_hierarchy *)
-module xor_cell (
-    input wire a,
-    input wire b,
-    output wire out
+module Division_cell (
+    input wire [7:0] a,
+    input wire [7:0] b,
+
+    // 나눗셈에서 몫과 나머지 추가
+    output wire [7:0] quotient,
+    output wire [7:0] remainder
     );
 
-    assign out = a ^ b;
+    wire div_by_zero;
+    // 0으로 나누는 경우 체크 추가
+    assign div_by_zero = (b == 8'h00);
+
+    assign quotient = div_by_zero ? 8'h00 : (a / b);
+    assign remainder = div_by_zero ? 8'h00 : (a % b);
 endmodule
 
-(* keep_hierarchy *)
-module nand_cell (
-    input wire a,
-    input wire b,
-    output wire out
+// If 연산 모듈
+module if_cell(
+    input wire [7:0] a,
+    input wire [7:0] b,
+    input wire [1:0] command,
+
+    // wire 0 => (== 실행)
+    // wire 1 => ( > 실행)
+    // wire 2 => ( < 실행)
+
+    // always 내부 할당 시 reg 타입 사용
+    output reg equal_flag
     );
 
-    assign out = !(a&b);
-endmodule
+    always @(*) begin
+        equal_flag = 1'b0;
 
-(* keep_hierarchy *)
-module nor_cell (
-    input wire a,
-    input wire b,
-    output wire out
-    );
-
-    assign out = !(a | b);
-endmodule
-
-(* keep_hierarchy *)
-module xnor_cell (
-    input wire a,
-    input wire b,
-    output wire out
-    );
-
-    assign out = !(a ^ b);
-endmodule
-
-(* keep_hierarchy *)
-module not_cell (
-    input wire in,
-    output wire out
-    );
-
-    assign out = !in;
-endmodule
-
-(* keep_hierarchy *)
-module mux_cell (
-    input wire a,
-    input wire b,
-    input wire sel,
-    output wire out
-    );
-
-    assign out = sel ? b : a;
-endmodule
-
-(* keep_hierarchy *)
-module dff_cell (
-    input wire clk,
-    input wire d,
-    output reg q,
-    output wire notq
-    );
-
-    assign notq = !q;
-    always @(posedge clk)
-        q <= d;
-
-endmodule
-
-(* keep_hierarchy *)
-module dffr_cell (
-    input wire clk,
-    input wire d,
-    input wire r,
-    output reg q,
-    output wire notq
-    );
-
-    assign notq = !q;
-
-    always @(posedge clk or posedge r) begin
-        if (r)
-            q <= 0;
-        else
-            q <= d;
+        case (command)
+            2'b00: equal_flag = (a == b);
+            2'b01: equal_flag = (a > b);
+            2'b10: equal_flag = (a < b);
+            default: equal_flag = 1'b0;
+        endcase
     end
-endmodule
 
-(* keep_hierarchy *)
-module dffsr_cell (
-    input wire clk,
-    input wire d,
-    input wire s,
-    input wire r,
-    output reg q,
-    output wire notq
-    );
-
-    assign notq = !q;
-
-    always @(posedge clk or posedge s or posedge r) begin
-        if (r)
-            q <= 0;
-        else if (s)
-            q <= 1;
-        else
-            q <= d;
-    end
 endmodule
