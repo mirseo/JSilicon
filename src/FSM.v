@@ -20,7 +20,18 @@ module FSM(
         .b(b),
         .opcode(opcode),
         .result(alu_result)
-    )
+    );
+
+    // UART 연동
+    UART_TX uart_connect(
+        .clock(clock),
+        .reset(reset),
+        .start(start_uart),
+        .data_in(alu_connect[7:0]),
+        .tx(tx),
+        .busy()
+    );
 
     
+
 endmodule
