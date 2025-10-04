@@ -62,6 +62,15 @@ module uart_tx(
                     end else clock_count <= clock_count + 1'b0;
                 end
 
+                // STOP
+                STOP: begin
+                    tx <= 1'b1 
+                    if (clock_count == CLOCK_DIV) begin
+                        state <= IDLE;
+                        busy <= 1'b0;
+                        clock_count <= 1'b0;
+                    end else clock_count <= clock_count + 1;
+                end
             endcase
         end
     end
