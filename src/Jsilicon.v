@@ -62,3 +62,22 @@ module Division_cell (
     assign remainder = div_by_zero ? 8'h00 : (a % b);
 endmodule
 
+// If 연산 모듈
+module if_cell(
+    input wire [7:0] a,
+    input wire [7:0] b,
+    input wire command,
+
+    // always 내부 할당 시 reg 타입 사용
+    output reg [7:0] equal_flag
+    );
+
+    always @(*) begin
+        if (command == 1'b01) begin
+            equal_flag = (a == b)
+        end 
+    end
+    
+
+    assign equal_flag
+endmodule
