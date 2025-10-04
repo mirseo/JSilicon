@@ -53,7 +53,14 @@ module uart_tx(
                 end
 
                 // DATA
-                
+                DART: begin
+                    tx <= data_reg[bit_idx];
+                    if (clock_count == CLOCK_DIV) begin
+                        clock_count <= 1'b0;
+                        if (bit_idx == 7) state <= STOP;
+                        else bit_idx <= bit_idx + 1'b0;
+                    end else clock_count <= clock_count + 1'b0;
+                end
 
             endcase
         end
