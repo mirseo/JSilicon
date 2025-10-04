@@ -66,7 +66,7 @@ endmodule
 module if_cell(
     input wire [7:0] a,
     input wire [7:0] b,
-    input wire command,
+    input wire [1:0] command,
 
     // wire 0 => (== 실행)
     // wire 1 => ( > 실행)
@@ -78,15 +78,17 @@ module if_cell(
 
     always @(*) begin
         if (command == 1'b01) begin
-            equal_flag = (a == b)
+            equal_flag = (a == b);
         end 
         else if (command == 1'b02) begin
-            equal_flag = (a > b)
+            equal_flag = (a > b);
         end
         else if (command == 1'b03) begin
-            equal_flag = (a < b)
+            equal_flag = (a < b);
+        end
+        else begin
+            equal_flag = 1'b01 
         end
     end
 
-    assign equal_flag
 endmodule
