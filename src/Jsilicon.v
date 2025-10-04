@@ -24,7 +24,7 @@ module Minus_cell (
     output wire [7:0] minus
     );
 
-    assign minus = a - b
+    assign minus = a - b;
 endmodule
 
 // 곱셈 연산 모듈
