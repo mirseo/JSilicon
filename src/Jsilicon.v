@@ -33,7 +33,8 @@ module Multiply_cell (
     input wire [7:0] a,
     input wire [7:0] b,
 
-    output wire [7:0] multiply
+    // 8비트 곱셈의 최대 출력은 16진수 255 => 결과값에 16진수 사용
+    output wire [15:0] multiply
     );
 
     assign multiply = a * b
