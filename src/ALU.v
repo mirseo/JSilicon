@@ -40,7 +40,7 @@ module ALU(
             3'b110: result = (a > b) ? 16'h0001 : 16'h0000;
             3'b111: result = (a < b) ? 16'h0001 : 16'h0000;
             // 비정의 코드 반환
-            default: result = 16'0000;
+            default: result = 16'h0000;
         endcase
     end
 endmodule
