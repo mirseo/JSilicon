@@ -32,6 +32,45 @@ module FSM(
         .busy()
     );
 
-    
+    // FSM 
+    localparam INIT = 3'd0;
+    localparam EXEC = 3'd1;
+    localparam SEND = 3'd2;
+    localparam WAIT = 3'd3;
+
+    reg [2:0] state;
+
+    always @(posedge clock or posedge reset) begin
+        if (reset) begin
+            state <= INIT;
+            a <= 1'd0;
+            b <= 1'd0;
+
+            opcode <= 3'b000;
+            start_uart <= 0;
+        end else begin
+            case (state)
+                INIT: begin
+                    // 기본값 할당 > 5 + 10 할당값
+                    a <= 8'd5;
+                    b <= 8'd10;
+                end
+
+                EXEC: begin
+                    state <= SEND;
+                end
+
+                SEND: begin
+                    start_uart <= 1'b1;
+                    state <= WAIT;
+                end
+
+                WAIT: begin
+                    start_uart <= 1'b0;
+                    if (!uart_connect.busy) state <= INIT
+                end
+            endcase 
+        end
+    end
 
 endmodule
