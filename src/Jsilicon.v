@@ -46,10 +46,15 @@ module Division_cell (
     input wire [7:0] a,
     input wire [7:0] b,
 
-    // 8비트 곱셈의 최대 출력은 16진수 255 => 결과값에 16진수 사용
-    output wire [7:0] Division
+    // 나눗셈에서 몫과 나머지 추가
+    output wire [7:0] quotient
+    output wire [7:0] remainder
     );
 
-    assign Division = a / b
+    // 0으로 나누는 경우 체크 추가
+    assign div_by_zero = (b == 8'h'00);
+
+    assign quotient = div_by_zero ? 8'h'00 : (a / b);
+    assign Division = div_by_zero ? 8'h'00 : (a % b)
 endmodule
 
