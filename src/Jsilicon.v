@@ -68,6 +68,10 @@ module if_cell(
     input wire [7:0] b,
     input wire command,
 
+    // wire 0 => (== 실행)
+    // wire 1 => ( > 실행)
+    // wire 2 => ( < 실행)
+
     // always 내부 할당 시 reg 타입 사용
     output reg [7:0] equal_flag
     );
@@ -76,8 +80,13 @@ module if_cell(
         if (command == 1'b01) begin
             equal_flag = (a == b)
         end 
+        else if (command == 1'b02) begin
+            equal_flag = (a > b)
+        end
+        else if (command == 1'b03) begin
+            equal_flag = (a < b)
+        end
     end
-    
 
     assign equal_flag
 endmodule
