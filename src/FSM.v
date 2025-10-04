@@ -3,7 +3,7 @@
 `define default_netname none
 
 (* keep_hierarchy *)
-module FSM(
+module FSM (
     input wire clock,
     input wire reset,
     input wire tx
