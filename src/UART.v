@@ -1,3 +1,5 @@
+// UART 외부 송신 모듈
+
 `define default_netname none
 
 module uart_tx(
