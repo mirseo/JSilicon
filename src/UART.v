@@ -13,9 +13,9 @@ module uart_tx(
     parameter CLOCK_DIV = 104; // 시스템 클럭 9600bps 지정
 
     reg [7:0] data_reg;
-    reg [3:0] bit_idx,
-    reg [15:0] clock_count,
-    reg [2:0] state,
+    reg [3:0] bit_idx;
+    reg [15:0] clock_count;
+    reg [2:0] state;
     
     localparam IDLE = 3'd0;
     localparam START = 3'd1;
@@ -44,31 +44,31 @@ module uart_tx(
                 end
                 // START 
                 START: begin
-                    tx <= 1'b01; 
+                    tx <= 1'b0; 
                     if (clock_count == CLOCK_DIV) begin
-                        clock_count <= 1'b0;
+                        clock_count <= 16'd0;
                         state <= DATA;
                         bit_idx <= 1'b0;
                     end else clock_count <= clock_count + 1'b1;
                 end
 
                 // DATA
-                DART: begin
+                DATA: begin
                     tx <= data_reg[bit_idx];
                     if (clock_count == CLOCK_DIV) begin
-                        clock_count <= 1'b0;
+                        clock_count <= 16'd0;
                         if (bit_idx == 7) state <= STOP;
-                        else bit_idx <= bit_idx + 1'b0;
-                    end else clock_count <= clock_count + 1'b0;
+                        else bit_idx <= bit_idx + 1'b1;
+                    end else clock_count <= clock_count + 1'b1;
                 end
 
                 // STOP
                 STOP: begin
-                    tx <= 1'b1 
+                    tx <= 1'b1;
                     if (clock_count == CLOCK_DIV) begin
                         state <= IDLE;
                         busy <= 1'b0;
-                        clock_count <= 1'b0;
+                        clock_count <= 16'd0;
                     end else clock_count <= clock_count + 1;
                 end
             endcase
