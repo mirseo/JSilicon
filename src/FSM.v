@@ -8,4 +8,19 @@ module FSM(
     input wire reset,
     input wire tx
     );
+
+    reg [7:0] a, b;
+    reg [2:0] opcode;
+    wire [15:0] alu_result;
+    reg start_uart;
+
+    // ALU 연동
+    ALU alu_connect (
+        .a(a),
+        .b(b),
+        .opcode(opcode),
+        .result(alu_result)
+    )
+
+    
 endmodule
