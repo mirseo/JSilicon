@@ -39,3 +39,17 @@ module Multiply_cell (
 
     assign multiply = a * b
 endmodule
+
+// 나눗셈 연산 모듈
+(* keep_hierarchy *)
+module Division_cell (
+    input wire [7:0] a,
+    input wire [7:0] b,
+
+    // 8비트 곱셈의 최대 출력은 16진수 255 => 결과값에 16진수 사용
+    output wire [7:0] Division
+    );
+
+    assign Division = a / b
+endmodule
+
