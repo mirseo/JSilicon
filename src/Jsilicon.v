@@ -7,13 +7,13 @@
 module Jsilicon(
     input wire clock,
     input wire reset,
-    input wire tx
+    output wire tx
     );
 
     FSM core_init (
         .clock(clock),
         .reset(reset),
-        .tx(tx),
-    )
+        .tx(tx)
+    );
 endmodule
 
