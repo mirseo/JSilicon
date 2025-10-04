@@ -10,7 +10,7 @@ module uart_tx(
     output reg busy
     );
 
-    parameter CLK_DIV = 104; // 시스템 클럭 9600bps 지정
+    parameter CLOCK_DIV = 104; // 시스템 클럭 9600bps 지정
 
     reg [7:0] data_reg;
     reg [3:0] bit_idx,
@@ -42,6 +42,17 @@ module uart_tx(
                         busy <= 1'b1;
                     end
                 end
+                // START 
+                START: begin
+                    tx <= 1'b01; 
+                    if (clock_count == CLOCK_DIV) begin
+                        clock_count <= 1'b0;
+                        state <= DATA;
+                        bit_idx <= 1'b0;
+                    end else clock_count <= clock_count + 1'b1;
+                end
+
+                // DATA
                 
 
             endcase
