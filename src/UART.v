@@ -2,7 +2,7 @@
 
 `define default_netname none
 
-module uart_tx(
+module UART_TX(
     input wire clock,
     input wire reset,
     input wire start,
