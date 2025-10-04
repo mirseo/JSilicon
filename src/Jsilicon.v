@@ -83,7 +83,7 @@ module if_cell(
             2'b00: equal_flag = (a == b);
             2'b01: equal_flag = (a > b);
             2'b10: equal_flag = (a < b);
-            default: 1'b0;
+            default: equal_flag = 1'b0;
         endcase
     end
 
