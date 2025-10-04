@@ -45,7 +45,8 @@ module uart_tx(
                 // START 
                 START: begin
                     tx <= 1'b0; 
-                    if (clock_count == CLOCK_DIV) begin
+                    // 주기 비교용 클럭 읽기 수정
+                    if (clock_count == CLOCK_DIV - 1) begin
                         clock_count <= 16'd0;
                         state <= DATA;
                         bit_idx <= 1'b0;
@@ -55,21 +56,25 @@ module uart_tx(
                 // DATA
                 DATA: begin
                     tx <= data_reg[bit_idx];
-                    if (clock_count == CLOCK_DIV) begin
+                    if (clock_count == CLOCK_DIV - 1) begin
                         clock_count <= 16'd0;
-                        if (bit_idx == 7) state <= STOP;
-                        else bit_idx <= bit_idx + 1'b1;
+                        if (bit_idx == 7) begin
+                            bit_idx <= 0;
+                            state <= STOP;
+                        end else begin
+                            bit_idx <= bit_idx + 1'b1;
+                        end
                     end else clock_count <= clock_count + 1'b1;
                 end
 
                 // STOP
                 STOP: begin
                     tx <= 1'b1;
-                    if (clock_count == CLOCK_DIV) begin
+                    if (clock_count == CLOCK_DIV - 1) begin
                         state <= IDLE;
                         busy <= 1'b0;
                         clock_count <= 16'd0;
-                    end else clock_count <= clock_count + 1;
+                    end else clock_count <= clock_count + 1'b1;
                 end
             endcase
         end
