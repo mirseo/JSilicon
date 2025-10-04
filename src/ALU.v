@@ -27,7 +27,7 @@ module ALU(
             3'b001: result = a - b;
             3'b010: result = a * b; 
             3'b011: result = (b == 2'b00) ? 16'b0000 : a / b;
-            3'b010: result = (b == 2'b00) ? 16'b0000 : a % b; 
+            3'b100: result = (b == 2'b00) ? 16'b0000 : a % b; 
             3'b101: result = (a == b);
             3'b110: result = (a > b);
             3'b111: result = (a < b);
