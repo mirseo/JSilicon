@@ -37,7 +37,10 @@ module Multiply_cell (
     output wire [15:0] multiply
     );
 
-    assign multiply = a * b
+    wire multiply_by_zero;
+    assign multiply_by_zero = (b == 8'h00);
+
+    assign multiply = multiply_by_zero ? 16'h00 : (a * b);
 endmodule
 
 // 나눗셈 연산 모듈
@@ -47,14 +50,15 @@ module Division_cell (
     input wire [7:0] b,
 
     // 나눗셈에서 몫과 나머지 추가
-    output wire [7:0] quotient
+    output wire [7:0] quotient,
     output wire [7:0] remainder
     );
 
+    wire div_by_zero;
     // 0으로 나누는 경우 체크 추가
-    assign div_by_zero = (b == 8'h'00);
+    assign div_by_zero = (b == 8'h00);
 
-    assign quotient = div_by_zero ? 8'h'00 : (a / b);
-    assign Division = div_by_zero ? 8'h'00 : (a % b)
+    assign quotient = div_by_zero ? 8'h00 : (a / b);
+    assign remainder = div_by_zero ? 8'h00 : (a % b);
 endmodule
 
