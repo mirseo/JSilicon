@@ -23,8 +23,15 @@ module ALU(
 
     always @(*) begin
         case (opcode)
-            3'b000: result =  a + b;
-            3'b001: result =  a - b;
+            3'b000: result = a + b;
+            3'b001: result = a - b;
+            3'b010: result = a * b; 
+            3'b011: result = (b == 2'b00) ? 16'b0000 : a / b;
+            3'b010: result = (b == 2'b00) ? 16'b0000 : a % b; 
+            3'b101: result = (a == b);
+            3'b110: result = (a > b);
+            3'b111: result = (a < b);
+            default: result = 2'b00;
         endcase
     end
 endmodule
