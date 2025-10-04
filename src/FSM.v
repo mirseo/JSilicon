@@ -54,6 +54,8 @@ module FSM (
                     // 기본값 할당 > 5 + 10 할당값
                     a <= 8'd5;
                     b <= 8'd10;
+                    opcode <= 3'b000; 
+                    state <= EXEC;
                 end
 
                 EXEC: begin
@@ -67,7 +69,7 @@ module FSM (
 
                 WAIT: begin
                     start_uart <= 1'b0;
-                    if (!uart_connect.busy) state <= INIT
+                    if (!uart_connect.busy) state <= INIT;
                 end
             endcase 
         end
