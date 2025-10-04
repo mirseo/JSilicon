@@ -3,11 +3,11 @@
 // 지시자 추가 : 계층 변경 금지
 (* keep_hierarchy *)
 module sum_cell (
-    // 입력 정의 (2개 입력 -> return으로 )
-    input wire a,
-    input wire b,
+    // 1비트 > 8비트로 업그레이드
+    input wire [7:0] a,
+    input wire [7:0] b,
 
-    output wire sum
+    output wire [7:0] sum
     );
 
     // 결과 더해서 출력
