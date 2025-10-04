@@ -73,22 +73,18 @@ module if_cell(
     // wire 2 => ( < 실행)
 
     // always 내부 할당 시 reg 타입 사용
-    output reg [7:0] equal_flag
+    output reg equal_flag
     );
 
     always @(*) begin
-        if (command == 1'b01) begin
-            equal_flag = (a == b);
-        end 
-        else if (command == 1'b02) begin
-            equal_flag = (a > b);
-        end
-        else if (command == 1'b03) begin
-            equal_flag = (a < b);
-        end
-        else begin
-            equal_flag = 1'b01 
-        end
+        equal_flag = 1'b0;
+
+        case (command)
+            2'b00: equal_flag = (a == b);
+            2'b01: equal_flag = (a > b);
+            2'b10: equal_flag = (a < b);
+            default: 1'b0;
+        endcase
     end
 
 endmodule
