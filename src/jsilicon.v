@@ -15,7 +15,9 @@ module tt_um_Jsilicon(
 
     // Enable Input 추가
     input wire ena,
-    input wire uio_oe,
+    
+    // 출력핀 재지정
+    output wire uio_oe,
     
     // 사용자 출력 추가
     output wire [7:0] uo_out,
