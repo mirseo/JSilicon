@@ -11,7 +11,7 @@ module FSM (
     input wire [7:0] b,
     input wire [2:0] opcode,
 
-    // JSilicon.v 에서 넘어오는 신호 수신
+    // 출력 wire
     output wire [15:0] alu_result,
     output wire uart_tx,
     output wire uart_busy
@@ -29,7 +29,7 @@ module FSM (
     UART_TX uart_connect(
         .clock(clock),
         .reset(reset),
-        .start(1'b1),
+        .start(start_uart),
         .data_in(alu_connect[7:0]),
         .tx(tx),
         .busy()
@@ -37,31 +37,21 @@ module FSM (
 
     // FSM 
     localparam INIT = 3'd0;
-    localparam EXEC = 3'd1;
-    localparam SEND = 3'd2;
-    localparam WAIT = 3'd3;
+    // remove unused code (EXEC)
+    localparam SEND = 3'd1;
+    localparam WAIT = 3'd2;
 
     reg [2:0] state;
 
     always @(posedge clock or posedge reset) begin
         if (reset) begin
             state <= INIT;
-            a <= 1'd0;
-            b <= 1'd0;
-
-            opcode <= 3'b000;
-            start_uart <= 0;
+            // remove hardcording value
+            start_uart <= 1'b01;
         end else begin
             case (state)
                 INIT: begin
-                    // 기본값 할당 > 5 + 10 할당값
-                    a <= 8'd5;
-                    b <= 8'd10;
-                    opcode <= 3'b000; 
-                    state <= EXEC;
-                end
-
-                EXEC: begin
+                    start_uart <= 1'b01;
                     state <= SEND;
                 end
 
@@ -71,7 +61,6 @@ module FSM (
                 end
 
                 WAIT: begin
-                    start_uart <= 1'b0;
                     if (!uart_connect.busy) state <= INIT;
                 end
             endcase 
