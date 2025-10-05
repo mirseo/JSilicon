@@ -49,7 +49,7 @@ module tt_um_Jsilicon(
     );
 
     // 출력 지정
-    assign uo_out = alu_result[7:0]
+    assign uo_out = alu_result[7:0];
     assign uio_out = uio_oe ? alu_result[7:0] : 8'bz;
     assign tx = uart_tx;
 endmodule
