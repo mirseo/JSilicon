@@ -6,13 +6,16 @@
 module FSM (
     input wire clock,
     input wire reset,
-    input wire tx
-    );
+    // 입력 wire 분리
+    input wire [7:0] a,
+    input wire [7:0] b,
+    input wire [2:0] opcode,
 
-    reg [7:0] a, b;
-    reg [2:0] opcode;
-    wire [15:0] alu_result;
-    reg start_uart;
+    // JSilicon.v 에서 넘어오는 신호 수신
+    output wire [15:0] alu_result,
+    output wire uart_tx,
+    output wire uart_busy
+    );
 
     // ALU 연동
     ALU alu_connect (
@@ -26,7 +29,7 @@ module FSM (
     UART_TX uart_connect(
         .clock(clock),
         .reset(reset),
-        .start(start_uart),
+        .start(1'b1),
         .data_in(alu_connect[7:0]),
         .tx(tx),
         .busy()
