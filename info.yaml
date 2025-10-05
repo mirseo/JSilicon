@@ -10,6 +10,12 @@ project:
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  top_module:   "tt_um_Jsilicon" # 최상위 모듈 추가
+  source_files:
+    - src/JSilicon.v
+    - src/FSM.v
+    - src/ALU.v
+    - src/UART.v
 
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
