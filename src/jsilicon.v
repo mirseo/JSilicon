@@ -15,6 +15,7 @@ module tt_um_Jsilicon(
 
     // Enable Input 추가
     input wire ena,
+    input wire uio_oe,
     
     // 사용자 출력 추가
     output wire [7:0] uo_out,
@@ -48,8 +49,8 @@ module tt_um_Jsilicon(
     );
 
     // 출력 지정
-    assign uo_out = alu_result[7:0];
-    assign uio_out = {7'b0, uart_tx};
+    assign uo_out = alu_result[7:0]
+    assign uio_out = uio_oe ? alu_result[7:0] : 8'bz;
     assign tx = uart_tx;
 endmodule
 
