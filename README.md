@@ -2,11 +2,11 @@
 
 # Jsilicon
 
-- [Read the documentation for project](docs/info.md)
-
+- [[EN] Project-info](docs/info.md)
+- [[KO] 프로젝트 정보](docs/info.md)
 ## What is Jsilicon?
 
-Jsilicon is a project aimed at creating a dedicated ASIC chip for JavaScript execution, with the objective of processing JavaScript operations without requiring a conventional CPU architecture.  
+JSilicon is an open-source ASIC core prototype built with Verilog, featuring a simple ALU, FSM controller, and UART transmitter — a foundational building block toward a JavaScript-native hardware processor.
 
 <!-- To learn more and get started, visit https://JSilicon.mirseo.dev. -->
 
