@@ -14,7 +14,7 @@ module tt_um_Jsilicon(
     input wire [7:0] uio_in,
     
     // 사용자 출력 추가
-    output wire [7:0] ui_out,
+    output wire [7:0] uo_out,
     output wire [7:0] uio_out,
     output wire tx
     );
@@ -23,17 +23,17 @@ module tt_um_Jsilicon(
     wire reset = ~rst_n;
 
     // 내부 wire 지정
-    wire [3:0] a = user_input[7:4];
-    wire [3:0] b = user_input[3:0];
+    wire [3:0] a = ui_in[7:4];
+    wire [3:0] b = ui_in[3:0];
     // Opcode 지정
-    wire [2:0] opcode = user_io_input[2:0];
+    wire [2:0] opcode = uio_in[2:0];
 
     wire [15:0] alu_result;
     wire uart_tx;
     wire uart_busy;
 
     FSM core_init (
-        .clock(clock),
+        .clock(clk),
         .reset(reset),
         .a ({4'b0000, a}),
         .b ({4'b0000, b}),
@@ -44,8 +44,8 @@ module tt_um_Jsilicon(
     );
 
     // 출력 지정
-    assign user_output = alu_result[7:0];
-    assign user_io_output = {7'b0, uart_tx};
+    assign uo_out = alu_result[7:0];
+    assign uio_out = {7'b0, uart_tx};
     assign tx = uart_tx;
 endmodule
 
