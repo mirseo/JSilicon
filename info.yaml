@@ -12,10 +12,10 @@ project:
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
   top_module:   "tt_um_Jsilicon" # 최상위 모듈 추가
   source_files:
-    - "src/jsilicon.v"
-    - "src/fsm.v"
-    - "src/alu.v"
-    - "src/uart.v"
+    - "jsilicon.v"
+    - "fsm.v"
+    - "alu.v"
+    - "uart.v"
 
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
