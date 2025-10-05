@@ -1,78 +1,47 @@
-name: TinyTapeout CI Pipeline
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
-
+name: test
+on: [push, workflow_dispatch]
 jobs:
-  synthesis:
+  test:
     runs-on: ubuntu-24.04
-    name: RTL Synthesis with Yosys and OpenLane
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - name: Setup Yosys and OpenLane
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential clang bison flex
-          git clone https://github.com/YosysHQ/yosys.git
-          git clone https://github.com/efabless/openlane.git
+      - name: Install iverilog
+        shell: bash
+        run: sudo apt-get update && sudo apt-get install -y iverilog
 
-      - name: Run Yosys synthesis
+      # Set Python up and install cocotb
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python packages
+        shell: bash
+        run: pip install -r test/requirements.txt
+
+      - name: Run tests
         run: |
-          cd yosys
+          cd test
+          make clean
           make
+          # make will return success even if the test fails, so check for failure in the results.xml
+          ! grep failure results.xml
 
-      - name: Run OpenLane for placement & routing
-        run: |
-          cd openlane
-          ./flow.tcl -design path_to_your_design
-
-  gdsii_generation:
-    needs: synthesis
-    runs-on: ubuntu-24.04
-    name: GDSII Generation
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Test Summary
+        uses: test-summary/action@v2.3
         with:
-          submodules: recursive
+          paths: "test/results.xml"
+        if: always()
 
-      - name: Run OpenLane for GDSII generation
-        run: |
-          cd openlane
-          ./flow.tcl -design path_to_your_design -run gdsii
-
-  precheck:
-    needs: gdsii_generation
-    runs-on: ubuntu-24.04
-    name: Precheck the GDSII Output
-    steps:
-      - name: Run Tiny Tapeout Precheck
-        uses: TinyTapeout/tt-gds-action/precheck@ttsky25b
-        with:
-          pdk: sky130
-
-  upload_artifacts:
-    needs: gdsii_generation
-    runs-on: ubuntu-24.04
-    name: Upload GDSII Files
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-
-      - name: Upload GDSII Files
+      - name: upload vcd
+        if: success() || failure()
         uses: actions/upload-artifact@v4
         with:
-          name: gdsii-files
-          path: /path/to/your/generated/gdsii/file.gds
+          name: test-vcd
+          path: |
+            test/tb.vcd
+            test/results.xml
