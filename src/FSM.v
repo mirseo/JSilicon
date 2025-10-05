@@ -18,7 +18,7 @@ module FSM (
     );
 
     // ALU 연동
-    ALU alu_result (
+    ALU alu_connect (
         .a(a),
         .b(b),
         .opcode(opcode),
@@ -30,7 +30,7 @@ module FSM (
         .clock(clock),
         .reset(reset),
         .start(start_uart),
-        .data_in(alu_connect[7:0]),
+        .data_in(alu_result[7:0]),
         .tx(uart_tx),
         .busy()
     );
@@ -48,7 +48,7 @@ module FSM (
         if (reset) begin
             state <= INIT;
             // remove hardcording value
-            start_uart <= 1'b1;
+            start_uart <= 1'b0;
         end else begin
             case (state)
                 INIT: begin
