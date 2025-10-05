@@ -6,7 +6,7 @@
 
 module tt_um_Jsilicon(
     input wire clock,
-    input wire reset,
+    input wire reset_n,
 
     // 사용자 입력 기능 추가
     input wire [7:0] user_input,
