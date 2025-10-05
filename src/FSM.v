@@ -57,12 +57,12 @@ module FSM (
                 end
 
                 SEND: begin
-                    start_uart <= 1'b1;
+                    start_uart <= 1'b0;
                     state <= WAIT;
                 end
 
                 WAIT: begin
-                    if (!uart_connect.busy) state <= INIT;
+                    if (!uart_busy) state <= INIT;
                 end
             endcase 
         end
