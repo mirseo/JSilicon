@@ -4,7 +4,7 @@
 
 `define default_netname none
 
-module Jsilicon(
+module tt_um_Jsilicon(
     input wire clock,
     input wire reset,
 
