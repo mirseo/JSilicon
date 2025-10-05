@@ -17,7 +17,7 @@ module tt_um_Jsilicon(
     input wire ena,
     
     // 출력핀 재지정
-    output wire uio_oe,
+    output wire [7:0] uio_oe,
     
     // 사용자 출력 추가
     output wire [7:0] uo_out,
@@ -50,9 +50,12 @@ module tt_um_Jsilicon(
         .uart_busy(uart_busy)
     );
 
+    // 출력 핀 설정
+    assign uio_oe = 8'b00000001;
+
     // 출력 지정
     assign uo_out = alu_result[7:0];
-    assign uio_out = uio_oe ? alu_result[7:0] : 8'bz;
+    assign uio_out = {7'b0, uart_tx};
     assign tx = uart_tx;
 endmodule
 
