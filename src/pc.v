@@ -9,6 +9,8 @@ module PC (
     input wire reset,
     input wire ena,
 
+    // 디버그 포트
+    output wire [3:0] pc_out,
     output wire [7:0] instr_out
 
     );
@@ -22,7 +24,16 @@ module PC (
     // 명령구조 : [7:5] = opcode, [4:0]=operand 
     // ex, ADD 3  = [000](opcode) + [00011](operand)
     // todo - FSM 명령어 추가하기 (25.10.06)  
+
+    // 루프 변수 추가
+    integer i; 
     initial begin
+
+        // ROM 사전 채우기
+        for (i = 0; i < 16; i = i + 1)
+            // 데이터를 쓰기 전에는 0으로 채워두기
+            rom[i] = 8'b00000000;
+
         // ADD 3
         rom[0] = 8'b00000011;
         // SUB 2
@@ -35,10 +46,19 @@ module PC (
 
     always @(posedge clk or posedge reset) begin
         if (reset) pc <= 0;
-        else if (ena) pc <= pc + 1;
+        else if (ena) begin
+            // 롬 명령어 끝까지 도달하면 0으로 로드
+            if (pc == 4'd3)
+                pc <= 0;
+            else
+                pc <= pc + 1;
+        end
     end
 
     // 포트명 오류 수정
     assign instr_out = rom[pc];
+
+    // 디버그 포트
+    assign pc_out = pc;
 
 endmodule
