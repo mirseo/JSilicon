@@ -14,12 +14,14 @@ module tt_um_Jsilicon(
     input wire [7:0] uio_in,
 
     // Enable Input 추가
-    input wire ena;
+    input wire ena,
+    
+    // 출력핀 재지정
+    output wire [7:0] uio_oe,
     
     // 사용자 출력 추가
     output wire [7:0] uo_out,
-    output wire [7:0] uio_out,
-    output wire tx
+    output wire [7:0] uio_out
     );
 
     // 초기화 동기화
@@ -38,6 +40,7 @@ module tt_um_Jsilicon(
     FSM core_init (
         .clock(clk),
         .reset(reset),
+        .ena(ena),
         .a ({4'b0000, a}),
         .b ({4'b0000, b}),
         .opcode(opcode),
@@ -46,9 +49,11 @@ module tt_um_Jsilicon(
         .uart_busy(uart_busy)
     );
 
+    // 출력 핀 설정
+    assign uio_oe = 8'b00000001;
+
     // 출력 지정
-    assign uo_out = alu_result[7:0];
-    assign uio_out = {7'b0, uart_tx};
-    assign tx = uart_tx;
+    assign uo_out = { uart_busy, alu_result[6:0] };
+    assign uio_out = { alu_result[15:9], uart_tx };
 endmodule
 

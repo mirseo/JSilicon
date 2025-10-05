@@ -11,6 +11,8 @@ module FSM (
     input wire [7:0] b,
     input wire [2:0] opcode,
 
+    input wire ena,
+
     // 출력 wire
     output wire [15:0] alu_result,
     output wire uart_tx,
@@ -22,6 +24,7 @@ module FSM (
         .a(a),
         .b(b),
         .opcode(opcode),
+        .ena(ena),
         .result(alu_result)
     );
 
@@ -32,16 +35,16 @@ module FSM (
         .start(start_uart),
         .data_in(alu_result[7:0]),
         .tx(uart_tx),
-        .busy()
+        .busy(uart_busy)
     );
 
-    // FSM 
-    localparam INIT = 3'd0;
-    // remove unused code (EXEC)
-    localparam SEND = 3'd1;
-    localparam WAIT = 3'd2;
+    reg [1:0] state;
 
-    reg [2:0] state;
+    // FSM - compress bits
+    localparam INIT = 2'd0;
+    // remove unused code (EXEC)
+    localparam SEND = 2'd1;
+    localparam WAIT = 2'd2;
     reg start_uart;
 
     always @(posedge clock or posedge reset) begin
@@ -49,7 +52,7 @@ module FSM (
             state <= INIT;
             // 하드코딩 값 삭제
             start_uart <= 1'b0;
-        end else begin
+        end else if (ena) begin
             case (state)
                 INIT: begin
                     start_uart <= 1'b1;
@@ -65,9 +68,17 @@ module FSM (
                 end
 
                 WAIT: begin
+                    start_uart <= 1'b0; // 재 초기화
                     if (!uart_busy) state <= INIT;
                 end
+
+                default: begin
+                    state <= INIT;
+                    start_uart <= 1'b0;
+                end
             endcase 
+        end else begin
+            start_uart <= 1'b0;
         end
     end
 
