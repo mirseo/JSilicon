@@ -11,6 +11,8 @@ module FSM (
     input wire [7:0] b,
     input wire [2:0] opcode,
 
+    input wire ena,
+
     // 출력 wire
     output wire [15:0] alu_result,
     output wire uart_tx,
@@ -49,7 +51,7 @@ module FSM (
             state <= INIT;
             // 하드코딩 값 삭제
             start_uart <= 1'b0;
-        end else begin
+        end else if (ena) begin
             case (state)
                 INIT: begin
                     start_uart <= 1'b1;

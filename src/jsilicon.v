@@ -38,6 +38,7 @@ module tt_um_Jsilicon(
     FSM core_init (
         .clock(clk),
         .reset(reset),
+        .ena(ena),
         .a ({4'b0000, a}),
         .b ({4'b0000, b}),
         .opcode(opcode),
