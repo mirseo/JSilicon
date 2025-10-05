@@ -28,9 +28,9 @@ module ALU(
     wire div_by_zero = (b == 8'h00);
 
     always @(*) begin
+        // 기본값 세팅
+        result = 16'b0000;
         if (ena) begin
-            // 기본값 세팅
-            result = 16'b0000;
             case (opcode)
                 // 데이터 업데이트 // 8진수 > 16 진수 변경
                 3'b000: result = {{8{1'b0}}, a + b};

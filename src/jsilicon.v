@@ -21,7 +21,7 @@ module tt_um_Jsilicon(
     
     // 사용자 출력 추가
     output wire [7:0] uo_out,
-    output wire [7:0] uio_out,
+    output wire [7:0] uio_out
     );
 
     // 초기화 동기화
@@ -53,7 +53,7 @@ module tt_um_Jsilicon(
     assign uio_oe = 8'b00000001;
 
     // 출력 지정
-    assign uo_out = alu_result[7:0];
-    assign uio_out = {7'b0, uart_tx};
+    assign uo_out = { uart_busy, alu_result[6:0] };
+    assign uio_out = { alu_result[15:9], uart_tx };
 endmodule
 
