@@ -47,7 +47,7 @@ module FSM (
     always @(posedge clock or posedge reset) begin
         if (reset) begin
             state <= INIT;
-            // remove hardcording value
+            // 하드코딩 값 삭제
             start_uart <= 1'b0;
         end else begin
             case (state)
@@ -57,8 +57,11 @@ module FSM (
                 end
 
                 SEND: begin
-                    start_uart <= 1'b0;
-                    state <= WAIT;
+                    // 안정성 코드 추가 (state가 INIT이 될 수 있음)
+                    if (uart_busy) begin
+                        start_uart <= 1'b0;
+                        state <= WAIT;
+                    end
                 end
 
                 WAIT: begin
