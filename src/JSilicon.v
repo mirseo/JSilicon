@@ -5,21 +5,22 @@
 `define default_netname none
 
 module tt_um_Jsilicon(
-    input wire clock,
-    input wire reset_n,
+    // Tinytapeout 요구 변수명으로 수정 
+    input wire clk,
+    input wire rst_n,
 
     // 사용자 입력 기능 추가
-    input wire [7:0] user_input,
-    input wire [7:0] user_io_input,
+    input wire [7:0] ui_in,
+    input wire [7:0] uio_in,
     
     // 사용자 출력 추가
-    output wire [7:0] user_output,
-    output wire [7:0] user_io_output,
+    output wire [7:0] ui_out,
+    output wire [7:0] uio_out,
     output wire tx
     );
 
     // 초기화 동기화
-    wire reset = ~reset_n;
+    wire reset = ~rst_n;
 
     // 내부 wire 지정
     wire [3:0] a = user_input[7:4];
