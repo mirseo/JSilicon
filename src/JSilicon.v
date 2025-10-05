@@ -19,7 +19,7 @@ module tt_um_Jsilicon(
     );
 
     // 초기화 동기화
-    wire reset = ~reset_n,
+    wire reset = ~reset_n;
 
     // 내부 wire 지정
     wire [3:0] a = user_input[7:4];
