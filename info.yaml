@@ -1,12 +1,12 @@
 # Tiny Tapeout project information (Wokwi project)
 project:
-  wokwi_id:     305568836183130690       # Set this to the ID of your Wokwi project (the number from the project's URL)
+  wokwi_id:     0      # Set this to the ID of your Wokwi project (the number from the project's URL)
   title:        "Jsilicon"      # Project title
-  author:       "JunHyeok seo/mirseo"      # Your name
+  author:       "JunHyeok Seo (mirseo)"      # Your name
   discord:      "mirseo"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
-  language:     "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  description:  "8-bit ALU with UART transmission built in Verilog, designed for TinyTapeout shuttle."      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     12000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
@@ -16,34 +16,34 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "Operand B bit 0"
+  ui[1]: "Operand B bit 1"
+  ui[2]: "Operand B bit 2"
+  ui[3]: "Operand B bit 3"
+  ui[4]: "Operand A bit 0"
+  ui[5]: "Operand A bit 1"
+  ui[6]: "Operand A bit 2"
+  ui[7]: "Operand A bit 3"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "ALU result bit 0"
+  uo[1]: "ALU result bit 1"
+  uo[2]: "ALU result bit 2"
+  uo[3]: "ALU result bit 3"
+  uo[4]: "ALU result bit 4"
+  uo[5]: "ALU result bit 5"
+  uo[6]: "ALU result bit 6"
+  uo[7]: "ALU result bit 7"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
+  uio[0]: "Opcode bit 0 (000:+, 001:-, 010:*, 011:/, 100:%, 101:==, 110:>, 111:<)"
+  uio[1]: "Opcode bit 1"
+  uio[2]: "Opcode bit 2"
   uio[3]: ""
   uio[4]: ""
   uio[5]: ""
   uio[6]: ""
-  uio[7]: ""
+  uio[7]: "UART TX output (mirrored on bit 0 of uio_out)"
 
 # Do not change!
 yaml_version: 6
