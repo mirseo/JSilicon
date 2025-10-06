@@ -5,7 +5,7 @@
 
 (* keep_hierarchy *)
 module PC (
-    input wire clk,
+    input wire clock,
     input wire reset,
     input wire ena,
 
@@ -44,7 +44,7 @@ module PC (
         rom[3] = 8'b00000000;
     end
 
-    always @(posedge clk or posedge reset) begin
+    always @(posedge clock or posedge reset) begin
         if (reset) pc <= 0;
         else if (ena) begin
             // 롬 명령어 끝까지 도달하면 0으로 로드
