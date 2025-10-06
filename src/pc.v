@@ -28,12 +28,6 @@ module PC (
     // 루프 변수 추가
     integer i; 
     initial begin
-
-        // ROM 사전 채우기
-        for (i = 0; i < 16; i = i + 1)
-            // 데이터를 쓰기 전에는 0으로 채워두기
-            rom[i] = 8'b00000000;
-
         // ADD 3
         rom[0] = 8'b00000011;
         // SUB 2
@@ -42,6 +36,11 @@ module PC (
         rom[2] = 8'b01000101;
         // NOP
         rom[3] = 8'b00000000;
+
+        //  Sky130 합성에 맞춰서 조정
+        for (i = 4; i < 16; i = i + 1)
+            // 데이터를 쓰기 전에는 0으로 채워두기
+            rom[i] = 8'b00000000;
     end
 
     always @(posedge clock or posedge reset) begin
