@@ -123,6 +123,6 @@ Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.
 
 ## Language
 - [한국어](./docs/README_ko.md)
-- [English](./README.md)
+- [English](../README.md)
 
 File: docs/v0.2/JSilicon-ko-0.2.md  
