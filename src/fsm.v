@@ -78,6 +78,7 @@ module FSM (
                 end
             endcase 
         end else begin
+            state <= INIT;
             start_uart <= 1'b0;
         end
     end
