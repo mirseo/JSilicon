@@ -33,15 +33,38 @@ module DECODER (
             // 명령구조 : [7:5] = opcode, [4:0]=operand 
             // ex, ADD 3  = [000](opcode) + [00011](operand)
             // 명령어 종류 (opcode)
+
             alu_opcode <= instr_in[7:5];
             // 목적지 레지스터 선택
             reg_sel <= instr_in[4];
             // 즉시 명령 입력 (즉시값)
             operand <= instr_in[3:0];
 
-            // ALU ON
-            alu_enable <= 1'b1;
-            write_enable <= 1'b1;
+            // 파서 구조화
+            case (instr_in[7:5])
+                // AND, SUB, MUL (ALU 필요)
+                3'b000, 3'b001, 3'b010: begin
+                    alu_enable <= 1'b1;
+                    write_enable <= 1'b1;
+                end
+                // DIV, MOD (ALU 필요)
+                3'b011, 3'b100: begin
+                    alu_enable <= 1'b1;
+                    write_enable <= 1'b1;
+                end
+                // CMP (==)
+                3'b101: begin
+                    // 레지스터 불필요
+                    alu_enable <= 1'b1;
+                    write_enable <= 1'b0;
+                end
+
+                // NOP or Undefined
+                default: begin
+                    alu_enable <= 1'b0;
+                    write_enable <= 1'b0;
+                end
+            endcase
         end else begin
             //ena Off 인 경우
             alu_enable <= 1'b0;
