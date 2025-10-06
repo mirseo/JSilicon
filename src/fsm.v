@@ -12,6 +12,7 @@ module FSM (
     input wire [2:0] opcode,
 
     input wire ena,
+    input wire alu_ena,
 
     // 출력 wire
     output wire [15:0] alu_result,
@@ -24,7 +25,7 @@ module FSM (
         .a(a),
         .b(b),
         .opcode(opcode),
-        .ena(ena),
+        .ena(alu_ena),
         .result(alu_result)
     );
 

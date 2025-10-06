@@ -6,21 +6,20 @@
 module SWITCH (
     // 스위치 포트
     input wire mode,
-    
-    // 외부 데이터 주입
-    input wire [2:0] opcode,
-    input wire [7:0] operand,
 
-    // CPU 제어
-    input wire [2:0] cpu_opcode,
-    input wire [7:0] cpu_operand,
+    // 다중 mode 선택자로 조정
+    input wire [7:0] manual_a, manual_b,
+    input wire [2:0] manual_opcode
 
-    // ALU 제어
-    output wire [2:0] alu_opcode,
-    output wire [7:0] alu_operand
+    input wire [7:0] cpu_a, cpu_b,
+    input wire [2:0] cpu_opcode
+
+    input wire [7:0] select_a, select_b,
+    input wire [2:0] select_opcode
     );
 
     // SWITCH
-    assign alu_operand = (mode == 1'b1) ? cpu_operand : operand;
-    assign alu_opcode = (mode == 1'b1) ? cpu_opcode : opcode;
+    assign select_a = mode ? cpu_a : manual_a;
+    assign select_b = mode ? cpu_b : manual_b;
+    assign select_opcode = mode ? cpu_opcode : manual_opcode; 
 endmodule
