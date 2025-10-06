@@ -13,10 +13,9 @@ You can also include images in this folder and reference them in the markdown. E
 
 Version 0.2 expands on the original manual ALU functionality by adding a CPU mode that automatically executes pre-programmed instructions. To enable this, key CPU components such as a Program Counter (PC), an instruction decoder, and a register file have been integrated.  
 
-This design marks the beginning of the **JSilicon series**, an initiative inspired by the simplicity of JavaScript and the philosophy of accessible silicon design.  
+Inspired by JavaScript's simplicity and the philosophy of accessible silicon design, the JSilicon series aims to develop an ASIC that can natively power a JS runtime.  
 
-## Overview
-
+## Overview  
 -- **PC (Program Counter & ROM)** - Stores a 16x8-bit instruction set in its internal ROM and sequentially fetches them in CPU mode.  
 
 -- **Decoder** - Parses instructions from PC and generates control signals for other components.  
@@ -54,16 +53,16 @@ This design marks the beginning of the **JSilicon series**, an initiative inspir
    B. Choose operation: Set the desired operation using the Opcode on `uio_in[7:5]`.  
          - `000` : A + B  
          - `001` : A - B  
-         - `010` : A * B
-         - `011` : A / B
-         - `100` : A % B
-         - `101` : A == B
-         - `110` : A > B
+         - `010` : A * B  
+         - `011` : A / B  
+         - `100` : A % B  
+         - `101` : A == B  
+         - `110` : A > B  
          - `111` : A < B  
 
    C. Read the result: The result will instantly appear on the `uo_out` and `uio_out` pins.   
 
-   D. Serial output (optional): The same result is sent via UART on the `tx` pin.  
+   D. Serial output (optional): The same result is sent via UART on the `uio_out[0]` pin.  
          - Connect a USB-to-serial adapter (9600 bps, 8N1) to read it on a PC or MCU.  
          - `uio_out[0]` reflects the UART TX line state for monitoring.  
 
@@ -93,12 +92,19 @@ This design marks the beginning of the **JSilicon series**, an initiative inspir
 ## Vision
 JSilicon is not just a chip - it's a story of building silicon under constraints.  
 
-This first version (v0.1) was created entirely during mandatory military service in South Korea, demonstrating that hardware innovation is possible even in the most limited environments. Future versions will expand JSilicon into a more capable CPU core with instruction memory, register files, and possibly RISC-like capabilities.
+This first version was created entirely during mandatory military service in South Korea, demonstrating that hardware innovation is possible even in the most limited environments. Future versions will expand JSilicon into a more capable CPU core RISC-like capabilities.
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/license/mit/).  
 
-## Author
+## Author Message
+Hello, I'm JunHyeok Seo, currently serving my mandatory military service here in the Republic of Korea.
+
+The reason I created the JSilicon project was to prove that even time spent in the military can be meaningful. And I will see it through. Even when there seems to be no path forward, I will find a way, just as I always have.
+
+You can create something like this even with a low-spec computer or on a device that lags and crashes when you open just one or two browser tabs. Do not give up. Just as I managed to build this chip, you can achieve it too.
+
 [mirseo](https://github.com/mirseo)  
 
-Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.  
+Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.    
+
