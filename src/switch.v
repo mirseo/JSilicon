@@ -14,8 +14,8 @@ module SWITCH (
     input wire [7:0] cpu_a, cpu_b,
     input wire [2:0] cpu_opcode
 
-    input wire [7:0] select_a, select_b,
-    input wire [2:0] select_opcode
+    output wire [7:0] select_a, select_b,
+    output wire [2:0] select_opcode
     );
 
     // SWITCH

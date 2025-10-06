@@ -1,6 +1,9 @@
 // top 모듈
 // FSM 커버
-// 동작 구조 : USER INPUT > Jsilicon.v > FSM.v > ALU.v > UART.v
+// 동작 구조 - Manual : USER INPUT > Jsilicon.v > FSM.v (Internal ALU, UART)
+// 동작 구조 - CPU(AUTO)
+// Foward : PC > DECODER > REG > SWITCH > FSM (Internal ALU, UART)
+// Write-Back : ALU Result (FSM output) > REG
 
 `define default_netname none
 
@@ -29,8 +32,8 @@ module tt_um_Jsilicon(
 
     // Manual 제어 할당
     // 내부 wire 지정
-    wire [3:0] manual_a = {4'b0000, ui_in[7:4]};
-    wire [3:0] manual_b = {4'b0000, ui_in[3:0]};
+    wire [3:0] manual_a = ui_in[7:4];
+    wire [3:0] manual_b = ui_in[3:0];
     // Opcode 지정
     // 연결 추가 - Opcode 
     wire [2:0] manual_opcode = uio_in[7:5];
@@ -43,7 +46,7 @@ module tt_um_Jsilicon(
     wire [7:0] instr;
 
     PC pc_inst (
-        .clock(clock),
+        .clock(clk),
         .reset(reset),
         .ena(ena),
         .pc_out(pc_cnt),
@@ -57,7 +60,7 @@ module tt_um_Jsilicon(
     wire decoder_write_enable;
 
     DECODER dec_inst (
-        .clock(clock),
+        .clock(clk),
         .reset(reset),
         .ena(ena),
         .instr_in(instr),
@@ -77,7 +80,7 @@ module tt_um_Jsilicon(
     wire R0, R1, reg_data_out;
 
     REG reg_inst (
-        .clock(clock),
+        .clock(clk),
         .reset(reset),
         .ena(ena),
         .opcode(regfile_opcode),
@@ -93,9 +96,22 @@ module tt_um_Jsilicon(
     wire [2:0] cpu_opcode = decoder_alu_opcode;
 
     // SWITCH 제어
-    wire [7:0] select_a = mode ? cpu_a : manual_a;
-    wire [7:0] select_b = mode ? cpu_b : manual_b;
-    wire [2:0] select_opcode = mode ? cpu_opcode : manual_opcode;
+    // 모듈 사용으로 변경
+    wire [7:0] select_a;
+    wire [7:0] select_b;
+    wire [2:0] select_opcode;
+    SWITCH switch_inst (
+        .mode(mode),
+        .manual_a({4'b0000, manual_a}),
+        .manual_b({4'b0000, manual_b}),
+        .manual_opcode(manual_opcode),
+        .cpu_a(cpu_a),
+        .cpu_b(cpu_b),
+        .cpu_opcode(cpu_opcode),
+        .select_a(select_a),
+        .select_b(select_b),
+        .select_opcode(select_opcode)
+    );
 
     wire uart_tx;
     wire uart_busy;
@@ -105,9 +121,9 @@ module tt_um_Jsilicon(
         .clock(clk),
         .reset(reset),
         .ena(ena),
-        .a ({4'b0000, a}),
-        .b ({4'b0000, b}),
-        .opcode(opcode),
+        .a (select_a),
+        .b (select_b),
+        .opcode(select_opcode),
         .alu_ena(alu_ena),
         .alu_result(alu_result),
         .uart_tx(uart_tx),
