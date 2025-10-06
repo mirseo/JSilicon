@@ -8,6 +8,7 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## JSilicon v0.2 – A Dual-Mode 8-bit CPU/ALU Core
+A JavaScript-Inspired Prototype Built Under Constraint  
 
 **JSilicon** is an **8-bit ALU core** designed and implemented from scratch during my mandatory military service in South Korea (2025). This project serves as a proof-of-concept, showing that a complete silicon design is achievable even in highly constrained environments.  
 
@@ -43,8 +44,8 @@ Inspired by JavaScript's simplicity and the philosophy of accessible silicon des
 | `uio_in[7:5]`| Input | **(Manual Mode)** Opcode (3-bit) |
 | `uio_in[4]` | Input | **Mode Select** (0: Manual, 1: CPU) |
 | `uo_out[7]` | Output | UART Busy Status (1: Busy) |
-| `uo_out[6:0]` | Output | ALU Result, lower 7 bits (`alu_result[6:0]`) |
-| `uio_out[7:1]`| Output | ALU Result, upper 8 bits (`alu_result[15:8]`) |
+| `uo_out[6:0]` | Output | ALU Result, bit [6:0] (Lower 7 bits) (`alu_result[6:0]`) |
+| `uio_out[7:1]`| Output | ALU Result, bits [15:8] (Upper 8 bits) (`alu_result[15:8]`) |
 | `uio_out[0]` | Output | UART TX serial data output (9600 bps) |
 
 ## How to test
