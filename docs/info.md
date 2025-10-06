@@ -16,34 +16,36 @@ Version 0.2 expands on the original manual ALU functionality by adding a CPU mod
 Inspired by JavaScript's simplicity and the philosophy of accessible silicon design, the JSilicon series aims to develop an ASIC that can natively power a JS runtime.  
 
 ## Overview  
--- **PC (Program Counter & ROM)** - Stores a 16x8-bit instruction set in its internal ROM and sequentially fetches them in CPU mode.  
+- **PC (Program Counter & ROM)** - Stores a 16x8-bit instruction set in its internal ROM and sequentially fetches them in CPU mode.  
 
--- **Decoder** - Parses instructions from PC and generates control signals for other components.  
+- **Decoder** - Parses instructions from PC and generates control signals for other components.  
 
--- **REG (Register File)** - Contains two 8-bit general-purpose registers (R0, R1) that serve as the CPU's workspace.  
+- **REG (Register File)** - Contains two 8-bit general-purpose registers (R0, R1) that serve as the CPU's workspace.  
 
--- **ALU (Arithmetic Logic Unit)** -  Performs eight fundamental arithmetic and logic operations, including addition, subtraction, and multiplication.  
+- **ALU (Arithmetic Logic Unit)** -  Performs eight fundamental arithmetic and logic operations, including addition, subtraction, and multiplication.  
 
--- **SWITCH** - A multiplexer that selects the data path based on the Mode pin, switching between external manual inputs and the internal CPU core.  
+- **SWITCH** - A multiplexer that selects the data path based on the Mode pin, switching between external manual inputs and the internal CPU core.  
 
--- **FSM (Finite State Machine)** - Acts as the central controller, managing the timing for ALU execution and UART transmission.  
+- **FSM (Finite State Machine)** - Acts as the central controller, managing the timing for ALU execution and UART transmission.  
 
--- **UART_TX** - Serializes the computation result and transmits it to an external device like a PC or MCU.  
+- **UART_TX** - Serializes the computation result and transmits it to an external device like a PC or MCU.  
 
 ---
 
 ## Pinout
 | Pin | Direction | Description |
-|-----|-----------|-------------|
-| `clk`       | Input  | System clock input (12 MHz) |
-| `rst_n`     | Input  | Active-low reset |
-| `ena`     | Input  | Chip enable (Active-High) |
-| `ui_in[7:4]` | Input  | (Manual Mode) Operand A (4 bits) |
-| `ui_in[3:0]` | Input  | (Manual Mode) Operand B (4 bits) |
-| `uio_in[2:0]` | Input  | (Manual Mode) Opcode selection (000:+, 001:-, 010:*, 011:/, 100:%, 101:==, 110:>, 111:<) (3 bits) |
-| `uo_out[6:0]` | Output | UART busy status (1: Busy) |
-| `uio_out[7:1]` | Output | ALU result, lower 7 bits( alu_result [6:0] ) |
-| `uio_out[0]`        | Output | UART TX serial data output (9600 bps) | 
+|---|---|---|
+| `clk` | Input | System clock (12 MHz) |
+| `rst_n` | Input | Active-low reset |
+| `ena` | Input | Chip enable (Active-High) |
+| `ui_in[7:4]` | Input | **(Manual Mode)** Operand A (4-bit) |
+| `ui_in[3:0]` | Input | **(Manual Mode)** Operand B (4-bit) |
+| `uio_in[7:5]`| Input | **(Manual Mode)** Opcode (3-bit) |
+| `uio_in[4]` | Input | **Mode Select** (0: Manual, 1: CPU) |
+| `uo_out[7]` | Output | UART Busy Status (1: Busy) |
+| `uo_out[6:0]` | Output | ALU Result, lower 7 bits (`alu_result[6:0]`) |
+| `uio_out[7:1]`| Output | ALU Result, upper 8 bits (`alu_result[15:8]`) |
+| `uio_out[0]` | Output | UART TX serial data output (9600 bps) |
 
 ## How to test
 1. **Manual Mode(Mode = 0)**  
@@ -103,8 +105,6 @@ Hello, I'm JunHyeok Seo, currently serving my mandatory military service here in
 The reason I created the JSilicon project was to prove that even time spent in the military can be meaningful. And I will see it through. Even when there seems to be no path forward, I will find a way, just as I always have.
 
 You can create something like this even with a low-spec computer or on a device that lags and crashes when you open just one or two browser tabs. Do not give up. Just as I managed to build this chip, you can achieve it too.
-
-[mirseo](https://github.com/mirseo)  
 
 Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.    
 
