@@ -16,6 +16,10 @@ project:
     - "fsm.v"
     - "alu.v"
     - "uart.v"
+    - "pc.v"
+    - "inst.v"
+    - "regfile.v"
+    - "switch.v"
 
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
@@ -39,17 +43,17 @@ pinout:
   uo[4]: "ALU result bit 4"
   uo[5]: "ALU result bit 5"
   uo[6]: "ALU result bit 6"
-  uo[7]: "ALU result bit 7"
+  uo[7]: "UART Busy Status"
 
   # Bidirectional pins
-  uio[0]: "Opcode bit 0 (000:+, 001:-, 010:*, 011:/, 100:%, 101:==, 110:>, 111:<)"
+  uio[0]: "UART TX Output"
   uio[1]: "Opcode bit 1"
   uio[2]: "Opcode bit 2"
   uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: "UART TX output (mirrored on bit 0 of uio_out)"
+  uio[4]: "Mode Select (0:Manual, 1:CPU)"
+  uio[5]: "Manual Opcode[0] (LSB)"
+  uio[6]: "Manual Opcode[1]"
+  uio[7]: "Manual Opcode[2] (MSB)"
 
 # Do not change!
 yaml_version: 6
