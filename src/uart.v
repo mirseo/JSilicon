@@ -12,7 +12,9 @@ module UART_TX(
     output reg busy
     );
 
-    parameter CLOCK_DIV = 104; // 시스템 클럭 9600bps 지정
+    // CLOCK_DIV = Fclk / Baurate
+    // 12,000,000 / 9600
+    parameter CLOCK_DIV = 1250; // 시스템 클럭 9600bps 지정
 
     reg [7:0] data_reg;
     reg [3:0] bit_idx;
