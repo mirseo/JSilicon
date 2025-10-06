@@ -101,4 +101,4 @@ This project is licensed under the [MIT License](https://opensource.org/license/
 ## Author
 [mirseo](https://github.com/mirseo)  
 
-Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.    
+Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.  
