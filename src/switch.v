@@ -9,10 +9,10 @@ module SWITCH (
 
     // 다중 mode 선택자로 조정
     input wire [7:0] manual_a, manual_b,
-    input wire [2:0] manual_opcode
+    input wire [2:0] manual_opcode,
 
     input wire [7:0] cpu_a, cpu_b,
-    input wire [2:0] cpu_opcode
+    input wire [2:0] cpu_opcode,
 
     output wire [7:0] select_a, select_b,
     output wire [2:0] select_opcode
