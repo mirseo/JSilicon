@@ -110,6 +110,8 @@ This first version was created entirely during mandatory military service in Sou
 Explore the physical layout of **JSilicon v0.2** in full 3D.  
 This interactive viewer lets you navigate through the final GDSII structure of the chip — from standard cells to routing layers — exactly as it will appear on silicon.    
 
+[View JSilicon v0.2 GDS Layout in 3D](https://mirseo.dev/)
+
 ## License
 This project is licensed under the [MIT License](https://opensource.org/license/mit/).  
 
