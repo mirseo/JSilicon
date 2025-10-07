@@ -7,9 +7,15 @@ You can also include images in this folder and reference them in the markdown. E
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
 
-## JSilicon v0.2 – A Dual-Mode 8-bit CPU/ALU Core
+<!-- gds render image -->
+<!-- ![JSilicon Render Image](./image/gds_render.png) -->
 
-**JSilicon** is an **8-bit ALU core** designed and implemented from scratch during my mandatory military service in South Korea (2025). This project serves as a proof-of-concept, showing that a complete silicon design is achievable even in highly constrained environments.  
+## JSilicon v0.2 – A Dual-Mode 8-bit CPU/ALU Core
+A JavaScript-Inspired Prototype Built Under Constraint  
+
+![JSilicon Render Image](../../image//gds_render.png)
+
+**JSilicon** is an **8-bit CPU/ALU core** designed and implemented from scratch during my mandatory military service in South Korea (2025). This project serves as a proof-of-concept, showing that a complete silicon design is achievable even in highly constrained environments.  
 
 Version 0.2 expands on the original manual ALU functionality by adding a CPU mode that automatically executes pre-programmed instructions. To enable this, key CPU components such as a Program Counter (PC), an instruction decoder, and a register file have been integrated.  
 
@@ -43,8 +49,8 @@ Inspired by JavaScript's simplicity and the philosophy of accessible silicon des
 | `uio_in[7:5]`| Input | **(Manual Mode)** Opcode (3-bit) |
 | `uio_in[4]` | Input | **Mode Select** (0: Manual, 1: CPU) |
 | `uo_out[7]` | Output | UART Busy Status (1: Busy) |
-| `uo_out[6:0]` | Output | ALU Result, lower 7 bits (`alu_result[6:0]`) |
-| `uio_out[7:1]`| Output | ALU Result, upper 8 bits (`alu_result[15:8]`) |
+| `uo_out[6:0]` | Output | ALU Result, bit [6:0] (Lower 7 bits) (`alu_result[6:0]`) |
+| `uio_out[7:1]`| Output | ALU Result, bits [15:8] (Upper 8 bits) (`alu_result[15:8]`) |
 | `uio_out[0]` | Output | UART TX serial data output (9600 bps) |
 
 ## How to test
@@ -96,6 +102,17 @@ JSilicon is not just a chip - it's a story of building silicon under constraints
 
 This first version was created entirely during mandatory military service in South Korea, demonstrating that hardware innovation is possible even in the most limited environments. Future versions will expand JSilicon into a more capable CPU core RISC-like capabilities.
 
+## Milestone - JSilicon v0.2 GDS Layout
+![JSilicon GDS Layout](../../image//gds_render.png)  
+
+In October 2025, JSilicon v0.2 reached a major milestone:  
+the successful generation of a complete **GDSII layout**, marking the transition from logic design to physical silicon.
+
+Explore the physical layout of **JSilicon v0.2** in full 3D.  
+This interactive viewer lets you navigate through the final GDSII structure of the chip — from standard cells to routing layers — exactly as it will appear on silicon.    
+
+[View JSilicon v0.2 GDS Layout in 3D](https://mirseo.dev/)
+
 ## License
 This project is licensed under the [MIT License](https://opensource.org/license/mit/).  
 
@@ -106,5 +123,4 @@ The reason I created the JSilicon project was to prove that even time spent in t
 
 You can create something like this even with a low-spec computer or on a device that lags and crashes when you open just one or two browser tabs. Do not give up. Just as I managed to build this chip, you can achieve it too.
 
-Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.    
-
+Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.  

@@ -9,7 +9,9 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## JSilicon v0.2 – A Dual-Mode 8-bit CPU/ALU Core
 
-**JSilicon** 은 제가 대한민국에서 복무한 군 복무 기간(2025) 동안 처음부터 설계하고 구현한 **8-bit ALU core**입니다. 이 프로젝트는 매우 제한된 환경에서도 완전한 수준의 CPU 설계가 가능함을 보여주는 개념 증명(Proof-of-Concept)입니다.
+![JSilicon Render Image](../../image/gds_render.png)
+
+**JSilicon** 은 제가 대한민국에서 복무한 군 복무 기간(2025) 동안 처음부터 설계하고 구현한 **8-bit CPU/ALU core**입니다. 이 프로젝트는 매우 제한된 환경에서도 완전한 수준의 CPU 설계가 가능함을 보여주는 개념 증명(Proof-of-Concept)입니다.
 
 버전 0.2는 원래의 수동 ALU 기능에 CPU 모드를 추가한 구현체입니다. 이 변경으로 미리 ROM에 프로그래밍된 명령어를 자동으로 실행할 수 있습니다. 이를 구현하기 위해서 **프로그램 카운터(PC)**, **명령어 디코더**, **레지스터 파일**과 같은 핵심 CPU 구성 요소들이 추가되었습니다.  
 
@@ -101,6 +103,18 @@ JSilicon은 단순한 칩이 아닙니다. 정확히는 제약 속에서 실리�
 
 차기 버전에서는 JSilicon를 RISC와 같은 기능을 갖춘 보다 강력한 칩으로 확장할 예정입니다.  
 
+## Milestone - JSilicon v0.2 GDS Layout
+![JSilicon GDS Layout](../../image/gds_render.png)  
+
+2025년 10월, JSilicon v0.2는 중요한 이정표에 도달했습니다:  
+완전한 **GDSII 레이아웃**의 성공적인 생성을 통해 논리 설계에서 물리적 실리콘으로의 전환 작업을 완료했습니다.  
+
+**JSilicon v0.2**를 웹 기반 3D 뷰어를 통해 확인해보세요.  
+이 웹사이트에서 칩의 최종 GDSII 구조를 3D로 확인할 수 있습니다.  
+표준 셀에서 라우팅 레이어까지 실제 실리콘에서 나타날 구조입니다.  
+
+[View JSilicon v0.2 GDS Layout in 3D](https://mirseo.dev/)  
+
 ## License
 이 프로젝트는 [MIT License](https://opensource.org/license/mit/). 를 따릅니다.  
 
@@ -121,3 +135,8 @@ JSilicon 프로젝트를 시작한 이유는, 군대에서의 시간도 의미 �
 
 Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.    
 
+## Language
+- [한국어](./docs/README_ko.md)
+- [English](../README.md)
+
+File: docs/v0.2/JSilicon-ko-0.2.md  
