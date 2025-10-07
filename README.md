@@ -9,10 +9,15 @@ You can also include images in this folder and reference them in the markdown. E
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
 
+<!-- gds render image -->
+<!-- ![JSilicon Render Image](./image/gds_render.png) -->
+
 ## JSilicon v0.2 – A Dual-Mode 8-bit CPU/ALU Core
 A JavaScript-Inspired Prototype Built Under Constraint  
 
-**JSilicon** is an **8-bit ALU core** designed and implemented from scratch during my mandatory military service in South Korea (2025). This project serves as a proof-of-concept, showing that a complete silicon design is achievable even in highly constrained environments.  
+![JSilicon Render Image](./image/gds_render.png)
+
+**JSilicon** is an **8-bit CPU/ALU core** designed and implemented from scratch during my mandatory military service in South Korea (2025). This project serves as a proof-of-concept, showing that a complete silicon design is achievable even in highly constrained environments.  
 
 Version 0.2 expands on the original manual ALU functionality by adding a CPU mode that automatically executes pre-programmed instructions. To enable this, key CPU components such as a Program Counter (PC), an instruction decoder, and a register file have been integrated.  
 
@@ -98,6 +103,12 @@ Inspired by JavaScript's simplicity and the philosophy of accessible silicon des
 JSilicon is not just a chip - it's a story of building silicon under constraints.  
 
 This first version was created entirely during mandatory military service in South Korea, demonstrating that hardware innovation is possible even in the most limited environments. Future versions will expand JSilicon into a more capable CPU core RISC-like capabilities.
+
+## Milestone - JSilicon v0.2 GDS Layout
+![JSilicon GDS Layout](./image/gds_render.png)  
+
+In October 2025, JSilicon v0.2 reached a major milestone:  
+the successful generation of a complete **GDSII layout**, marking the transition from logic design to physical silicon.
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/license/mit/).  
