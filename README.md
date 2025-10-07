@@ -107,6 +107,9 @@ This first version was created entirely during mandatory military service in Sou
 ## Milestone - JSilicon v0.2 GDS Layout
 ![JSilicon GDS Layout](./image/gds_render.png)  
 
+In October 2025, JSilicon v0.2 reached a major milestone:  
+the successful generation of a complete **GDSII layout**, marking the transition from logic design to physical silicon.
+
 Explore the physical layout of **JSilicon v0.2** in full 3D.  
 This interactive viewer lets you navigate through the final GDSII structure of the chip — from standard cells to routing layers — exactly as it will appear on silicon.    
 
