@@ -80,15 +80,14 @@ module tt_um_Jsilicon(
     // 미사용 신호 삭제
     wire [7:0] R0, R1;
 
+    // 미사용 디버그 포트 삭제
     REG reg_inst (
         .clock(clk),
         .reset(reset),
         .ena(ena),
         .opcode(regfile_opcode),
         .data_in(wb_data),
-        .data_out(),
-        .R0_out(R0),
-        .R1_out(R1)
+        .data_out()
     );
 
     // ALU - CPU mode
