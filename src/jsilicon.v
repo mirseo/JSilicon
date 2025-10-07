@@ -42,14 +42,15 @@ module tt_um_Jsilicon(
     wire mode = uio_in[4]; 
 
     // CPU 모드 (PC + Decoder)
-    wire [3:0] pc_cnt;
+    // 합성 시에는 미사용 디버그 포트 끄기 (gds 통과를 위한 사항)
+    // wire [3:0] pc_cnt;
     wire [7:0] instr;
 
     PC pc_inst (
         .clock(clk),
         .reset(reset),
         .ena(ena),
-        .pc_out(pc_cnt),
+        .pc_out(/* pc_cnt */),
         .instr_out(instr)
     );
 
@@ -77,7 +78,7 @@ module tt_um_Jsilicon(
     wire [7:0] wb_data = decoder_alu_enable ? alu_result[7:0] : {4'b0000, decoder_operand};
     wire [2:0] regfile_opcode = decoder_write_enable ? (decoder_reg_sel ? 3'b001 : 3'b000) : 3'b111;
 
-    wire R0, R1, reg_data_out;
+    wire [7:0] R0, R1, reg_data_out;
 
     REG reg_inst (
         .clock(clk),
