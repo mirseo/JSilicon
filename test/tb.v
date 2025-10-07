@@ -28,7 +28,8 @@ module tb ();
 `endif
 
   // Replace tt_um_example with your module name:
-  tt_um_Jsilicon (
+  // 인스턴스 이름 추가 (Design Under Test -> dut)
+  tt_um_Jsilicon dut (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
