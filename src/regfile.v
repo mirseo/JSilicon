@@ -27,7 +27,7 @@ module REG (
         if (reset) begin
             // 기본값 초기화
             R0 <= 0; R1 <= 0;
-            data_out <= 8'b0;
+            // data_out <= 8'b0;
         end else if (ena) begin
             case (opcode)
                 // opcode 별 분리
@@ -44,7 +44,9 @@ module REG (
                 // 3'b101: data_out <= R1;
 
                 // NOP (기본값)
-                default: data_out <= 8'b0;
+                default: begin
+                    // 다른 opcode 에서는 명령 실행 안함
+                end
             endcase
         end
     end
