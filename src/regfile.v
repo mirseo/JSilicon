@@ -17,8 +17,8 @@ module REG (
     output reg [7:0] data_out,
 
     // 디버그 포트
-    output wire [7:0] R0_out,
-    output wire [7:0] R1_out
+    // output wire [7:0] R0_out,
+    // output wire [7:0] R1_out
     );
 
     reg [7:0] R0, R1;
@@ -49,7 +49,7 @@ module REG (
         end
     end
 
-    assign R0_out = R0;
-    assign R1_out = R1;
+    // assign R0_out = R0;
+    // assign R1_out = R1;
     
 endmodule

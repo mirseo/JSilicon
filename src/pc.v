@@ -49,7 +49,7 @@ module PC (
         else if (ena) begin
             // 롬 명령어 끝까지 도달하면 0으로 로드
             if (pc == 4'd3)
-                pc <= 3'd0;
+                pc <= 4'd0;
             else
                 pc <= pc + 1;
         end

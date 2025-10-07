@@ -86,6 +86,7 @@ module tt_um_Jsilicon(
         .ena(ena),
         .opcode(regfile_opcode),
         .data_in(wb_data),
+        .data_out(),
         .R0_out(R0),
         .R1_out(R1)
     );
