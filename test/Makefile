@@ -5,7 +5,16 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = jsilicon.v \alu.v \fsm.v \inst.v \pc.v \regfile.v \switch.v \uart.v
+
+# 소스 지정 방법 변경 (+=)
+PROJECT_SOURCES += jsilicon.v
+PROJECT_SOURCES += alu.v
+PROJECT_SOURCES += fsm.v
+PROJECT_SOURCES += inst.v 
+PROJECT_SOURCES += pc.v
+PROJECT_SOURCES += regfile.v
+PROJECT_SOURCES += switch.v
+PROJECT_SOURCES += uart.v
 
 ifneq ($(GATES),yes)
 
