@@ -67,6 +67,10 @@ module DECODER (
             endcase
         end else begin
             //ena Off 인 경우
+            // latch 생성 방지
+            alu_opcode <= 3'b000;
+            operand <= 4'b0000;
+            reg_sel <= 1'b0;
             alu_enable <= 1'b0;
             write_enable <= 1'b0;
         end

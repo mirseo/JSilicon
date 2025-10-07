@@ -9,8 +9,8 @@ module PC (
     input wire reset,
     input wire ena,
 
-    // 디버그 포트
-    output wire [3:0] pc_out,
+    // 디버그 포트 - JSilicon.v (TOP)에서 사용하지 않도록 설정하여 제거
+    // output wire [3:0] pc_out,
     output wire [7:0] instr_out
 
     );
@@ -44,11 +44,12 @@ module PC (
     end
 
     always @(posedge clock or posedge reset) begin
-        if (reset) pc <= 0;
+        // 명시적 비트폭(합성 경고 해결)로 지정
+        if (reset) pc <= 4'd0;
         else if (ena) begin
             // 롬 명령어 끝까지 도달하면 0으로 로드
             if (pc == 4'd3)
-                pc <= 0;
+                pc <= 3'd0;
             else
                 pc <= pc + 1;
         end
@@ -57,7 +58,7 @@ module PC (
     // 포트명 오류 수정
     assign instr_out = rom[pc];
 
-    // 디버그 포트
-    assign pc_out = pc;
+    // 디버그 포트 - 합성 과정에서 pc_out 포트 제거로 인한 제거
+    // assign pc_out = pc;
 
 endmodule
