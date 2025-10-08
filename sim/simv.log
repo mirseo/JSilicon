@@ -1,0 +1,318 @@
+Command: simv +UVM_TESTNAME=jsilicon_full_test +UVM_VERBOSITY=UVM_MEDIUM -l simv.log
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP2_Full64; Runtime version W-2024.09-SP2_Full64;  Oct  9 00:01 2025
+UVM_INFO Synopsys/vcs/W-2024.09-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP1, Linux x86_64/64bit, 11/30/2024
+(C) 1996 - 2024 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'jsilicon.fsdb'
+*Verdi* : Begin traversing the scope (jsilicon_tb_top), layer (0).
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the MDAs, layer (0).
+*Verdi* : Enable +mda and +packedmda dumping.
+*Verdi* : End of traversing the MDAs.
+UVM_INFO @ 0: reporter [RNTST] Running test jsilicon_full_test...
+UVM_INFO Synopsys/vcs/W-2024.09-SP2/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               jsilicon_full_test      -     @341 
+  env                      jsilicon_env            -     @354 
+    agent                  jsilicon_agent          -     @363 
+      ap                   uvm_analysis_port       -     @557 
+      driver               jsilicon_driver         -     @391 
+        rsp_port           uvm_analysis_port       -     @410 
+        seq_item_port      uvm_seq_item_pull_port  -     @400 
+      monitor              jsilicon_monitor        -     @382 
+        ap                 uvm_analysis_port       -     @569 
+      sequencer            uvm_sequencer           -     @420 
+        rsp_export         uvm_analysis_export     -     @429 
+        seq_item_export    uvm_seq_item_pull_imp   -     @547 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    scoreboard             jsilicon_scoreboard     -     @372 
+      ap_imp               uvm_analysis_imp        -     @584 
+--------------------------------------------------------------
+
+UVM_INFO jsilicon_test.sv(145) @ 0: uvm_test_top [jsilicon_full_test] ========================================
+UVM_INFO jsilicon_test.sv(146) @ 0: uvm_test_top [jsilicon_full_test]    Starting Full Test
+UVM_INFO jsilicon_test.sv(147) @ 0: uvm_test_top [jsilicon_full_test] ========================================
+UVM_INFO jsilicon_sequences.sv(34) @ 0: uvm_test_top.env.agent.sequencer@@reset_seq [jsilicon_reset_sequence] Starting reset sequence
+UVM_INFO jsilicon_sequences.sv(65) @ 115000: uvm_test_top.env.agent.sequencer@@reset_seq [jsilicon_reset_sequence] Reset sequence completed
+UVM_INFO jsilicon_test.sv(154) @ 115000: uvm_test_top [jsilicon_full_test] --- Testing Manual Mode ---
+UVM_INFO jsilicon_sequences.sv(106) @ 115000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Starting Manual Mode test sequence
+UVM_INFO jsilicon_scoreboard.sv(63) @ 125000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=0, B=0, Op=0, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_sequences.sv(122) @ 125000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 0: A=10, B=5, Opcode=000
+UVM_INFO jsilicon_scoreboard.sv(63) @ 135000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=0, Expected=[00,0f], Got=[00,0f]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 145000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=0, Expected=[00,0f], Got=[00,0f]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 155000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=0, Expected=[00,0f], Got=[00,0f]
+UVM_INFO jsilicon_sequences.sv(122) @ 155000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 1: A=10, B=5, Opcode=001
+UVM_INFO jsilicon_scoreboard.sv(63) @ 165000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=1, Expected=[00,05], Got=[00,05]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 175000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=1, Expected=[00,05], Got=[00,05]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 185000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=1, Expected=[00,05], Got=[00,05]
+UVM_INFO jsilicon_sequences.sv(122) @ 185000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 2: A=10, B=5, Opcode=010
+UVM_INFO jsilicon_scoreboard.sv(63) @ 195000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=2, Expected=[00,32], Got=[00,32]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 205000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=2, Expected=[00,32], Got=[00,32]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 215000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=2, Expected=[00,32], Got=[00,32]
+UVM_INFO jsilicon_sequences.sv(122) @ 215000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 3: A=10, B=5, Opcode=011
+UVM_INFO jsilicon_scoreboard.sv(63) @ 225000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=3, Expected=[00,02], Got=[00,02]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 235000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=3, Expected=[00,02], Got=[00,02]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 245000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=3, Expected=[00,02], Got=[00,02]
+UVM_INFO jsilicon_sequences.sv(122) @ 245000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 4: A=10, B=0, Opcode=011
+UVM_INFO jsilicon_scoreboard.sv(63) @ 255000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=0, Op=3, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 265000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=0, Op=3, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 275000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=0, Op=3, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_sequences.sv(122) @ 275000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 5: A=10, B=3, Opcode=100
+UVM_INFO jsilicon_scoreboard.sv(63) @ 285000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=3, Op=4, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 295000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=3, Op=4, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 305000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=3, Op=4, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_sequences.sv(122) @ 305000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 6: A=10, B=10, Opcode=101
+UVM_INFO jsilicon_scoreboard.sv(63) @ 315000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=10, Op=5, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 325000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=10, Op=5, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 335000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=10, Op=5, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_sequences.sv(122) @ 335000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 7: A=10, B=5, Opcode=101
+UVM_INFO jsilicon_scoreboard.sv(63) @ 345000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=5, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 355000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=5, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 365000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=5, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_sequences.sv(122) @ 365000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 8: A=10, B=5, Opcode=110
+UVM_INFO jsilicon_scoreboard.sv(63) @ 375000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=6, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 385000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=6, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 395000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=6, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_sequences.sv(122) @ 395000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 9: A=5, B=10, Opcode=110
+UVM_INFO jsilicon_scoreboard.sv(63) @ 405000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=5, B=10, Op=6, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 415000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=5, B=10, Op=6, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 425000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=5, B=10, Op=6, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_sequences.sv(122) @ 425000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 10: A=5, B=10, Opcode=111
+UVM_INFO jsilicon_scoreboard.sv(63) @ 435000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=5, B=10, Op=7, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 445000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=5, B=10, Op=7, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 455000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=5, B=10, Op=7, Expected=[00,01], Got=[00,01]
+UVM_INFO jsilicon_sequences.sv(122) @ 455000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Test 11: A=10, B=5, Opcode=111
+UVM_INFO jsilicon_scoreboard.sv(63) @ 465000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 475000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_sequences.sv(142) @ 475000: uvm_test_top.env.agent.sequencer@@manual_seq [jsilicon_manual_sequence] Manual Mode test sequence completed
+UVM_INFO jsilicon_scoreboard.sv(63) @ 485000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 495000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 505000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 515000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 525000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 535000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 545000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 555000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 565000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 575000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 585000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 595000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 605000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 615000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 625000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 635000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 645000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 655000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 665000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 675000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 685000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 695000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 705000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 715000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 725000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 735000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 745000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 755000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 765000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 775000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 785000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 795000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 805000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 815000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 825000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 835000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 845000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 855000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 865000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 875000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 885000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 895000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 905000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 915000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 925000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 935000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 945000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 955000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(63) @ 965000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_sequences.sv(34) @ 975000: uvm_test_top.env.agent.sequencer@@reset_seq [jsilicon_reset_sequence] Starting reset sequence
+UVM_INFO jsilicon_scoreboard.sv(63) @ 975000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=10, B=5, Op=7, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_sequences.sv(65) @ 1085000: uvm_test_top.env.agent.sequencer@@reset_seq [jsilicon_reset_sequence] Reset sequence completed
+UVM_INFO jsilicon_test.sv(165) @ 1085000: uvm_test_top [jsilicon_full_test] --- Testing CPU Mode ---
+UVM_INFO jsilicon_sequences.sv(161) @ 1085000: uvm_test_top.env.agent.sequencer@@cpu_seq [jsilicon_cpu_sequence] Starting CPU Mode test sequence
+UVM_INFO jsilicon_scoreboard.sv(63) @ 1095000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] PASS: A=0, B=0, Op=0, Expected=[00,00], Got=[00,00]
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1105000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x00, uio_out=0x01
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1115000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x01
+UVM_INFO jsilicon_sequences.sv(188) @ 1115000: uvm_test_top.env.agent.sequencer@@cpu_seq [jsilicon_cpu_sequence] CPU Cycle 1: ADD
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1125000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_sequences.sv(201) @ 1125000: uvm_test_top.env.agent.sequencer@@cpu_seq [jsilicon_cpu_sequence] CPU Cycle 2: SUB
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1135000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_sequences.sv(214) @ 1135000: uvm_test_top.env.agent.sequencer@@cpu_seq [jsilicon_cpu_sequence] CPU Cycle 3: MUL
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1145000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_sequences.sv(227) @ 1145000: uvm_test_top.env.agent.sequencer@@cpu_seq [jsilicon_cpu_sequence] CPU Cycle 4: NOP
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1155000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_sequences.sv(240) @ 1155000: uvm_test_top.env.agent.sequencer@@cpu_seq [jsilicon_cpu_sequence] CPU Cycle 5: PC Wrap-around
+UVM_INFO jsilicon_sequences.sv(242) @ 1155000: uvm_test_top.env.agent.sequencer@@cpu_seq [jsilicon_cpu_sequence] CPU Mode test sequence completed
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1165000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1175000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1185000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1195000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1205000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1215000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1225000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1235000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1245000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1255000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1265000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1275000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1285000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1295000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1305000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1315000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1325000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1335000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1345000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1355000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1365000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1375000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1385000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1395000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1405000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1415000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1425000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1435000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1445000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1455000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1465000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1475000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1485000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1495000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1505000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1515000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1525000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1535000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1545000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1555000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1565000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1575000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1585000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1595000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1605000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1615000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1625000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1635000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1645000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1655000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1665000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1675000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1685000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1695000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1705000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1715000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1725000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1735000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1745000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1755000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1765000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1775000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1785000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1795000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1805000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1815000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1825000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1835000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1845000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1855000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1865000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1875000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1885000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1895000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1905000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1915000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1925000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1935000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1945000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1955000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1965000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1975000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1985000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 1995000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2005000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2015000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2025000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2035000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2045000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2055000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2065000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2075000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2085000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2095000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2105000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2115000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2125000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2135000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_scoreboard.sv(77) @ 2145000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] CPU Mode: uo_out=0x80, uio_out=0x00
+UVM_INFO jsilicon_test.sv(172) @ 2155000: uvm_test_top [jsilicon_full_test] Full Test Completed
+UVM_INFO Synopsys/vcs/W-2024.09-SP2/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 2155000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO jsilicon_scoreboard.sv(88) @ 2155000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] ========================================
+UVM_INFO jsilicon_scoreboard.sv(89) @ 2155000: uvm_test_top.env.scoreboard [jsilicon_scoreboard]        Scoreboard Final Report
+UVM_INFO jsilicon_scoreboard.sv(90) @ 2155000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] ========================================
+UVM_INFO jsilicon_scoreboard.sv(91) @ 2155000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] Total Transactions: 215
+UVM_INFO jsilicon_scoreboard.sv(92) @ 2155000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] Passed: 87
+UVM_INFO jsilicon_scoreboard.sv(93) @ 2155000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] Failed: 0
+UVM_INFO jsilicon_scoreboard.sv(96) @ 2155000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] *** TEST PASSED ***
+UVM_INFO jsilicon_scoreboard.sv(100) @ 2155000: uvm_test_top.env.scoreboard [jsilicon_scoreboard] ========================================
+UVM_INFO Synopsys/vcs/W-2024.09-SP2/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 2155000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  235
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[jsilicon_cpu_sequence]     7
+[jsilicon_full_test]     6
+[jsilicon_manual_sequence]    14
+[jsilicon_reset_sequence]     4
+[jsilicon_scoreboard]   200
+
+$finish called from file "Synopsys/vcs/W-2024.09-SP2/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time              2155000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 2155000 ps
+CPU Time:      0.150 seconds;       Data structure size:   0.6Mb
+Thu Oct  9 00:01:25 2025
