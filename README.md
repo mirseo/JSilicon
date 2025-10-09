@@ -94,6 +94,8 @@ Inspired by JavaScript's simplicity and the philosophy of accessible silicon des
       4. The result of each instruction is streamed to the `uo_out` and `uio_out` pins and also transmitted via UART.  
 
 ## Notes
+JSilicon v0.2 (TinyTapeout SKY 25b) represents the original independent design milestone achieved during mandatory service.  
+Subsequent improvements, including FSM stability refinements by @kim-sehun, were merged post-submission and will be reflected in the next fabrication cycle.  
 
 - **Clock** : Design expects a 12Mhz input clock. (TinyTapeout standard)
 - **Logic Levels** : All I/O pins use 3.3 V CMOS Logic

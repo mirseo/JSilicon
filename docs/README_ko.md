@@ -91,6 +91,10 @@ JSilicon 시리즈는 JavaScript의 문법상 단순함과 접근 가능한 실�
       4. 각 명령어의 처리 결과는 `uo_out` 과 `uio_out` 핀으로 출력되며, 같은 결과가 UART로도 출력됩니다.
 
 ## Notes
+JSilicon v0.2 (TinyTapeout SKY 25b) 는 의무 군 복무 중 독자적으로 설계된 첫 번째 실리콘 테이프아웃 버전입니다.  
+이번 버전은 프로젝트의 출발점이자 상징적인 목표로서, 설계, 합성, 레이아웃 전 과정을 단독으로 완성한 결과물입니다.  
+
+이후 FSM 안정성 개선과 시뮬레이션 케이스가 추가된 버전 등 @kim-sehun 님의 기여는 제출 이후에 병합되었으며, 다음 셔틀 주기(Next Version) 에 반영될 예정입니다.  
 
 - **Clock** : JSilicon은 TinyTapeout의 표준인 12Mhz 클럭 환경에서 설계되었습니다. (12Mhz 권장)  
 - **Logic Levels** : JSilicon의 모든 I/O 핀은 3.3V CMOS 로직에서 동작합니다. (TinyTapeout 표준)  
