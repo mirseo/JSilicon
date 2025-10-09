@@ -20,6 +20,16 @@ module FSM (
     output wire uart_busy
     );
 
+    reg [1:0] state;
+
+    // FSM - compress bits
+    localparam INIT = 2'd0;
+    // remove unused code (EXEC)
+    localparam SEND = 2'd1;
+    localparam WAIT = 2'd2;
+    reg start_uart;
+
+    
     // ALU 연동
     ALU alu_connect (
         .a(a),
@@ -39,14 +49,7 @@ module FSM (
         .busy(uart_busy)
     );
 
-    reg [1:0] state;
 
-    // FSM - compress bits
-    localparam INIT = 2'd0;
-    // remove unused code (EXEC)
-    localparam SEND = 2'd1;
-    localparam WAIT = 2'd2;
-    reg start_uart;
 
     always @(posedge clock or posedge reset) begin
         if (reset) begin
