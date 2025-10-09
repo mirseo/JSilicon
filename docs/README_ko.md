@@ -127,16 +127,24 @@ Issue 응답 및 PR 검토는 잠시 중단된 상태입니다.
 
 ### Contributors
 
-<a href="https://github.com/mirseo">
-    <img src="https://github.com/mirseo.png?size=80" 
-         width="50" 
-         style="border-radius: 50%;">
-</a>
-<a href="https://github.com/kim-sehun">
-    <img src="https://github.com/kim-sehun.png?size=80" 
-         width="50" 
-         style="border-radius: 50%;">
-</a>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/mirseo">
+        <img src="https://github.com/mirseo.png?size=80" width="60px;" style="border-radius:50%;" /><br/>
+        <sub><b>@mirseo</b></sub><br/>
+        Founder, RTL / GDS design
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/kim-sehun">
+        <img src="https://github.com/kim-sehun.png?size=80" width="60px;" style="border-radius:50%;" /><br/>
+        <sub><b>@kim-sehun</b></sub><br/>
+        FSM & Simulation Verification
+      </a>
+    </td>
+  </tr>
+</table>
 
 ## Author Message
 안녕하세요 저는 대한민국에서 군 복무를 하고 있는 서준혁이라고 합니다.  

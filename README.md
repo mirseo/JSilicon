@@ -128,16 +128,24 @@ and they will be reviewed sequentially after **the tape-out process** is complet
 
 ### Contributors
 
-<a href="https://github.com/mirseo">
-    <img src="https://github.com/mirseo.png?size=80" 
-         width="50" 
-         style="border-radius: 50%;">
-</a>
-<a href="https://github.com/kim-sehun">
-    <img src="https://github.com/kim-sehun.png?size=80" 
-         width="50" 
-         style="border-radius: 50%;">
-</a>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/mirseo">
+        <img src="https://github.com/mirseo.png?size=80" width="60px;" style="border-radius:50%;" /><br/>
+        <sub><b>@mirseo</b></sub><br/>
+        Founder, RTL / GDS design
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/kim-sehun">
+        <img src="https://github.com/kim-sehun.png?size=80" width="60px;" style="border-radius:50%;" /><br/>
+        <sub><b>@kim-sehun</b></sub><br/>
+        FSM & Simulation Verification
+      </a>
+    </td>
+  </tr>
+</table>
 
 ## Author Message
 Hello, I'm JunHyeok Seo, currently serving my mandatory military service here in the Republic of Korea.
