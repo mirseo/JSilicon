@@ -1,0 +1,9 @@
+name: "Notice"
+about: "Currently not accepting new issues"
+body: |
+  Thank you for your interest in JSilicon!
+  Please note that due to the developer's current military service,
+  new issues or PRs might not receive immediate responses.  
+
+  Contributions are always welcome in spirit —  
+  but please note that responses or merges may be delayed until after the tape-out phase.

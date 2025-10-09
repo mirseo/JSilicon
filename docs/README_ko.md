@@ -115,8 +115,15 @@ JSilicon은 단순한 칩이 아닙니다. 정확히는 제약 속에서 실리�
 
 [View JSilicon v0.2 GDS Layout in 3D](https://mirseo.dev/)  
 
-## License
-이 프로젝트는 [MIT License](https://opensource.org/license/mit/). 를 따릅니다.  
+## License & Contribution
+이 프로젝트는 [MIT License](https://opensource.org/license/mit/) 를 따릅니다.  
+
+JSilicon 프로젝트는 MIT 오픈소스로 공개되어 있으나,  
+개발자의 군대 복무 중 환경 제약과 Tape-out 준비로 인해 
+Issue 응답 및 PR 검토는 잠시 중단된 상태입니다.  
+
+아이디어나 제안은 언제든 환영하고 있으며,
+테이프아웃 완료 이후에 순차적으로 검토될 예정입니다.  
 
 ## Author Message
 안녕하세요 저는 대한민국에서 군 복무를 하고 있는 서준혁이라고 합니다.  
@@ -134,6 +141,15 @@ JSilicon 프로젝트를 시작한 이유는, 군대에서의 시간도 의미 �
 제가 JSilicon을 만들어냈듯이, 당신도 해낼 수 있습니다.  
 
 Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.    
+
+## Status Update
+- **2025-10-7** : GDSII 레이아웃 생성이 완료되어 논리 설계에서 물리적 실리콘으로의 전환 작업이 마무리되었습니다.  
+- **2025-10-9 ~ Present** : JSilicon v0.2 는 현재 시점에서 TinyTapeout 테이프아웃 제출을 준비 중입니다.  
+
+JSilicon v0.2 는 이제 최종 목적지에 도달하고 있습니다.  
+
+**Final Call**
+여러분, JSilicon v0.2는 칩 제조 공항에 착륙 준비를 하고 있습니다.  착륙까지 잠시만 기다려주세요.  
 
 ## Language
 - [한국어](./docs/README_ko.md)

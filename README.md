@@ -115,8 +115,16 @@ This interactive viewer lets you navigate through the final GDSII structure of t
 
 [View JSilicon v0.2 GDS Layout in 3D](https://mirseo.dev/)
 
-## License
+## License & Contribution
 This project is licensed under the [MIT License](https://opensource.org/license/mit/).  
+
+The **JSilicon** project is released as open source under the MIT license.  
+
+However, due to the developer's ongoing **mandatory military service** and **tape-out preparation**,  
+responses to issues and pull requests are temporarily paused.  
+
+Ideas and suggestions are always welcome,  
+and they will be reviewed sequentially after **the tape-out process** is completed.  
 
 ## Author Message
 Hello, I'm JunHyeok Seo, currently serving my mandatory military service here in the Republic of Korea.
@@ -126,6 +134,15 @@ The reason I created the JSilicon project was to prove that even time spent in t
 You can create something like this even with a low-spec computer or on a device that lags and crashes when you open just one or two browser tabs. Do not give up. Just as I managed to build this chip, you can achieve it too.
 
 Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.  
+
+## Status Update
+- **2025-10-7** : GDSII layout completed. Design verified and ready for fabrication.   
+- **2025-10-9 ~ Present** : Preparing for TinyTapeout tape-out submission.  
+
+The JSilicon v0.2 is now approaching its final milestone.  
+
+**Final Call**
+Ladies and gentlemen, JSilicon v0.2 is preparing to land at the actual chip manufacturing facility. Please stand by for tape-out.
 
 ## Language
 - [English](./README.md)
