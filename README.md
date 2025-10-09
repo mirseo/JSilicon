@@ -126,6 +126,19 @@ responses to issues and pull requests are temporarily paused.
 Ideas and suggestions are always welcome,  
 and they will be reviewed sequentially after **the tape-out process** is completed.  
 
+### Contributors
+
+<a href="https://github.com/mirseo">
+    <img src="https://github.com/mirseo.png?size=80" 
+         width="50" 
+         style="border-radius: 50%;">
+</a>
+<a href="https://github.com/kim-sehun">
+    <img src="https://github.com/kim-sehun.png?size=80" 
+         width="50" 
+         style="border-radius: 50%;">
+</a>
+
 ## Author Message
 Hello, I'm JunHyeok Seo, currently serving my mandatory military service here in the Republic of Korea.
 

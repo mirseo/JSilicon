@@ -125,6 +125,19 @@ Issue 응답 및 PR 검토는 잠시 중단된 상태입니다.
 아이디어나 제안은 언제든 환영하고 있으며,
 테이프아웃 완료 이후에 순차적으로 검토될 예정입니다.  
 
+### Contributors
+
+<a href="https://github.com/mirseo">
+    <img src="https://github.com/mirseo.png?size=80" 
+         width="50" 
+         style="border-radius: 50%;">
+</a>
+<a href="https://github.com/kim-sehun">
+    <img src="https://github.com/kim-sehun.png?size=80" 
+         width="50" 
+         style="border-radius: 50%;">
+</a>
+
 ## Author Message
 안녕하세요 저는 대한민국에서 군 복무를 하고 있는 서준혁이라고 합니다.  
 
