@@ -113,7 +113,19 @@ the successful generation of a complete **GDSII layout**, marking the transition
 Explore the physical layout of **JSilicon v0.2** in full 3D.  
 This interactive viewer lets you navigate through the final GDSII structure of the chip — from standard cells to routing layers — exactly as it will appear on silicon.    
 
-[View JSilicon v0.2 GDS Layout in 3D](https://mirseo.dev/)
+[View JSilicon v0.2 GDS Layout in 3D](https://mirseo.dev/)  
+
+## Milestone - Fabrication Phase (TinyTapeout SKY 25b)  
+![TinyTapeout Fabrication Proof](./image/tty_submit.PNG)
+In October 2025, JSilicon v0.2 release [Github Release](https://github.com/mirseo/JSilicon/releases/tag/JSilicon-v0.2) has officially entered the **fabrication stage**, joining the **TinyTapeout SKY 25b** shuttle for silicon production.  
+
+The proof of submission can be verified from the image above amd the official TinyTapeout project link below.  
+
+This marks the moment when JSilicon v0.2 transitions from code and layout - to real, physical silicon.  
+
+[TinyTapeout Project Link](https://app.tinytapeout.com/projects/3129)  
+
+[TinyTapeout SKY 25b Project List](https://app.tinytapeout.com/projects)  
 
 ## License & Contribution
 This project is licensed under the [MIT License](https://opensource.org/license/mit/).  
@@ -158,12 +170,19 @@ Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.
 
 ## Status Update
 - **2025-10-7** : GDSII layout completed. Design verified and ready for fabrication.   
-- **2025-10-9 ~ Present** : Preparing for TinyTapeout tape-out submission.  
+- **2025-10-9** : Preparing for TinyTapeout tape-out submission.  
+- **2025-10-9** : JSilicon v0.2 has officially joined the **TinyTapeout SKY 25b** shuttle, entering the **fabrication stage** for real silicon production.  
 
-The JSilicon v0.2 is now approaching its final milestone.  
+JSilicon v0.2 has now reached its final destination.  
+The only steps remaining are **physical manufacturing and testing**.  
+
+Future versions will continue to evolve,  
+with the ultimate goal of creating a chip capable of **natively running a JavaScript runtime**. Just like Node.js. but entirely on hardware
 
 **Final Call**
-Ladies and gentlemen, JSilicon v0.2 is preparing to land at the actual chip manufacturing facility. Please stand by for tape-out.
+Ladies and gentlemen, **JSilicon v0.2 has landed at the chip manufacturing airport**.  
+Please proceed with the final boarding and customs.  
+real silicon awaits.
 
 ## Language
 - [English](./README.md)

@@ -115,6 +115,18 @@ JSilicon은 단순한 칩이 아닙니다. 정확히는 제약 속에서 실리�
 
 [View JSilicon v0.2 GDS Layout in 3D](https://mirseo.dev/)  
 
+## Milestone - Fabrication Phase (TinyTapeout SKY 25b)  
+![TinyTapeout Fabrication Proof](../image//tty_submit.PNG)
+2025년 10월, JSilicon v0.2 는 공식적으로 **제작 단계**에 진입하여 실리콘 생산을 위해 **TinyTapeout SKY 25b** 셔틀에 합류했습니다.  
+
+JSilicon v0.2의 제작 상태는 위의 이미지와 아래의 공식 TinyTapeout 프로젝트 링크를 통해 확인할 수 있습니다.  
+
+이로써 JSilicon v0.2는 코드 및 레이아웃에서 **실제 물리적 실리콘으로 전환되는 순간**을 맞이했습니다.  
+
+[TinyTapeout Project Link](https://app.tinytapeout.com/projects/3129)  
+
+[TinyTapeout SKY 25b Project List](https://app.tinytapeout.com/projects)  
+
 ## License & Contribution
 이 프로젝트는 [MIT License](https://opensource.org/license/mit/) 를 따릅니다.  
 
@@ -165,12 +177,18 @@ Copyright 2025. JunHyeok Seo (mirseo). All rights reserved.
 
 ## Status Update
 - **2025-10-7** : GDSII 레이아웃 생성이 완료되어 논리 설계에서 물리적 실리콘으로의 전환 작업이 마무리되었습니다.  
-- **2025-10-9 ~ Present** : JSilicon v0.2 는 현재 시점에서 TinyTapeout 테이프아웃 제출을 준비 중입니다.  
+- **2025-10-9** : JSilicon v0.2 는 현재 시점에서 TinyTapeout 테이프아웃 제출을 준비 중입니다.  
+- **2025-10-9** : JSilicon v0.2 는 공식적으로 TinyTapeout SKY 25b 셔틀에 합류하여 제작 단계에 진입했습니다.  
 
-JSilicon v0.2 는 이제 최종 목적지에 도달하고 있습니다.  
+JSilicon v0.2 는 이제 최종 목적지에 도달했습니다.  
+남은 것은 실제 제작 및 테스트입니다.  
+
+앞으로도 다음 버전이 지속 개발될 예정이니 해당 버전을 참고해주세요.  
+최종 버전은 Node.js와 같은 JS 런타임을 자체적으로 구동하는 칩입니다.  
 
 **Final Call**
-여러분, JSilicon v0.2는 칩 제조 공항에 착륙 준비를 하고 있습니다.  착륙까지 잠시만 기다려주세요.  
+여러분, JSilicon v0.2는 칩 제조 공항에 착륙했습니다.  
+이제 입국 수속만 남았습니다. 실제 실리콘으로의 변환이 시작되었습니다.  
 
 ## Language
 - [한국어](./docs/README_ko.md)
