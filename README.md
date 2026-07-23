@@ -129,13 +129,32 @@ This marks the moment when JSilicon v0.2 transitions from code and layout - to r
 
 [TinyTapeout SKY 25b Project List](https://app.tinytapeout.com/projects)  
 
+## Milestone - JSilicon v0.2 Production
+
+In July 2026, the first version of JSilicon v0.2 arrived as a new, real chip!
+
+![TinyTapeout Fabrication Proof](./image/chip-display-up.jpg)
+
+Although it was a small project, the fact that we completed it from start to finish feels new and rewarding.
+
+The realization of a goal reached after a long and arduous period of endurance is a truly captivating feeling.
+
+It feels as though nothing is impossible.
+
+Thank you to everyone who supported this project.
+
+If I had been alone, it would have been impossible. I was able to reach this point thanks to your support.
+
+Thank you. Sincerely, MIRSEO.
+
+P.S. I will continue to strive to develop a chip capable of running JS, which was my original goal.
+
+Thank you for watching over this humble project.
+
 ## License & Contribution
 This project is licensed under the [MIT License](https://opensource.org/license/mit/).  
 
-The **JSilicon** project is released as open source under the MIT license.  
-
-However, due to the developer's ongoing **mandatory military service** and **tape-out preparation**,  
-responses to issues and pull requests are temporarily paused.  
+The **JSilicon** project is released as MIT open source, and PRs and issues are welcome at any time.  
 
 Ideas and suggestions are always welcome,  
 and they will be reviewed sequentially after **the tape-out process** is completed.  
@@ -181,12 +200,15 @@ The only steps remaining are **physical manufacturing and testing**.
 Future versions will continue to evolve,  
 with the ultimate goal of creating a chip capable of **natively running a JavaScript runtime**. Just like Node.js. but entirely on hardware
 
-**Final Call**
-Ladies and gentlemen, **JSilicon v0.2 has landed at the chip manufacturing airport**.  
+**Final Call**  
+Ladies and gentlemen, **JSilicon v0.2 has landed at the chip manufacturing airport**  
 Please proceed with the final boarding and customs.  
 real silicon awaits.  
 
-**Behind**
+**Onboarding**  
+Hello everyone! We have arrived at our destination!
+
+**Behind**  
 The Story Behind JSilicon v0.2 is Now Live!  
 
 The memoir detailing the development **begind Project JSilicon v0.2** has been uploaded to Medium!  

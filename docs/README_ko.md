@@ -131,12 +131,29 @@ JSilicon v0.2의 제작 상태는 위의 이미지와 아래의 공식 TinyTapeo
 
 [TinyTapeout SKY 25b Project List](https://app.tinytapeout.com/projects)  
 
+## Milestone - JSilicon v0.2 Production
+
+2026년 07월, JSilicon v0.2의 첫 버전이 새로운 진짜 칩으로 도착했습니다!
+
+![TinyTapeout Fabrication Proof](../image/chip-display-up.jpg)
+
+작은 프로젝트이지만, 처음부터 끝까지 완주했다는 점이 새롭고, 뿌듯하게 느껴지는 것 같네요.  
+길고도 긴 인고의 시간 끝에 닿은 목표의 현실화란, 매력적인 느낌입니다.  
+
+불가능이 없다라고도 느껴지는 느낌이네요.  
+
+프로젝트를 응원해주신 모든 분에게 감사드립니다.  
+만약 저 혼자였다면 불가능했을 겁니다. 여러분의 응원 덕분에 닿을 수 있었습니다.
+
+감사합니다. MIRSEO 드림.  
+
+P.S. 앞으로도 원 목표였던 JS를 돌리는 칩 개발을 위해 노력하겠습니다.  
+부족한 프로젝트를 지켜봐주셔서 감사합니다.   
+
 ## License & Contribution
 이 프로젝트는 [MIT License](https://opensource.org/license/mit/) 를 따릅니다.  
 
-JSilicon 프로젝트는 MIT 오픈소스로 공개되어 있으나,  
-개발자의 군대 복무 중 환경 제약과 Tape-out 준비로 인해 
-Issue 응답 및 PR 검토는 잠시 중단된 상태입니다.  
+JSilicon 프로젝트는 MIT 오픈소스로 공개되어 있으며, 언제든지 PR 및 Issue를 환영합니다.  
 
 아이디어나 제안은 언제든 환영하고 있으며,
 테이프아웃 완료 이후에 순차적으로 검토될 예정입니다.  
@@ -190,11 +207,14 @@ JSilicon v0.2 는 이제 최종 목적지에 도달했습니다.
 앞으로도 다음 버전이 지속 개발될 예정이니 해당 버전을 참고해주세요.  
 최종 버전은 Node.js와 같은 JS 런타임을 자체적으로 구동하는 칩입니다.  
 
-**Final Call**
+**Final Call**  
 여러분, JSilicon v0.2는 칩 제조 공항에 착륙했습니다.  
 이제 입국 수속만 남았습니다. 실제 실리콘으로의 변환이 시작되었습니다.  
 
-**Behind**
+**Onboarding**  
+안녕하세요 여러분! 목적지에 도착했습니다!  
+
+**Behind**  
 프로젝트 JSilicon v0.2의 개발 비하인드가 담긴 회고록이 Medium에 업로드되었습니다!  
 
 어렵지만, 처음부터 칩셋 개발에 도전했던 한 AI 학부생이자 군인의 이야기입니다.  
